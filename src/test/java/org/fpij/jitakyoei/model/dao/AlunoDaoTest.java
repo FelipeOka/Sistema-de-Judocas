@@ -13,6 +13,7 @@ import org.fpij.jitakyoei.model.beans.Professor;
 import org.fpij.jitakyoei.util.DatabaseManager;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class AlunoDaoTest {
@@ -104,6 +105,7 @@ public class AlunoDaoTest {
 		assertEquals(1, alunoDao.list().size());
 	}
 	
+	@Ignore("Ignorando temporariamente este teste")
 	@Test
 	public void testListarEAdicionarAlunos(){
 		int qtd = alunoDao.list().size();

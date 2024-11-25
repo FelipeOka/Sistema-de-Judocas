@@ -19,7 +19,6 @@
     </properties>
 
     <dependencies>
-        <!-- Genesis Annotation JDK 5 -->
         <dependency>
             <groupId>net.java.dev.genesis.annotation</groupId>
             <artifactId>annotation</artifactId>
@@ -28,7 +27,6 @@
             <systemPath>${project.basedir}/lib/genesis/dist/genesis-annotation-jdk5-3.2.jar</systemPath>
         </dependency>
 
-        <!-- Genesis Aspect -->
         <dependency>
             <groupId>net.java.dev.genesis</groupId>
             <artifactId>aspect</artifactId>
@@ -37,7 +35,6 @@
             <systemPath>${project.basedir}/lib/genesis/dist/genesis-aspect-3.2.jar</systemPath>
         </dependency>
 
-        <!-- Genesis Client -->
         <dependency>
             <groupId>net.java.dev.genesis.ui</groupId>
             <artifactId>client</artifactId>
@@ -46,7 +43,6 @@
             <systemPath>${project.basedir}/lib/genesis/dist/genesis-client-3.2.jar</systemPath>
         </dependency>
 
-        <!-- Genesis Client Swing -->
         <dependency>
             <groupId>net.java.dev.genesis.ui</groupId>
             <artifactId>client-swing</artifactId>
@@ -55,7 +51,6 @@
             <systemPath>${project.basedir}/lib/genesis/dist/genesis-client-swing-3.2.jar</systemPath>
         </dependency>
 
-        <!-- Genesis Client SWT -->
         <dependency>
             <groupId>net.java.dev.genesis.ui</groupId>
             <artifactId>client-swt</artifactId>
@@ -64,7 +59,6 @@
             <systemPath>${project.basedir}/lib/genesis/dist/genesis-client-swt-3.2.jar</systemPath>
         </dependency>
 
-        <!-- Genesis Client Thinlet -->
         <dependency>
             <groupId>net.java.dev.genesis.ui</groupId>
             <artifactId>client-thinlet</artifactId>
@@ -73,7 +67,6 @@
             <systemPath>${project.basedir}/lib/genesis/dist/genesis-client-thinlet-3.2.jar</systemPath>
         </dependency>
 
-        <!-- Genesis Container -->
         <dependency>
             <groupId>net.java.dev.genesis</groupId>
             <artifactId>container</artifactId>
@@ -82,7 +75,6 @@
             <systemPath>${project.basedir}/lib/genesis/dist/genesis-container-3.2.jar</systemPath>
         </dependency>
 
-        <!-- Genesis Server -->
         <dependency>
             <groupId>net.java.dev.genesis</groupId>
             <artifactId>server</artifactId>
@@ -91,7 +83,6 @@
             <systemPath>${project.basedir}/lib/genesis/dist/genesis-server-3.2.jar</systemPath>
         </dependency>
 
-        <!-- Genesis Shared -->
         <dependency>
             <groupId>net.java.dev.genesis</groupId>
             <artifactId>shared</artifactId>
@@ -100,7 +91,6 @@
             <systemPath>${project.basedir}/lib/genesis/dist/genesis-shared-3.2.jar</systemPath>
         </dependency>
 
-        <!-- Genesis Shared Annotated -->
         <dependency>
             <groupId>net.java.dev.genesis</groupId>
             <artifactId>shared-annotated</artifactId>
@@ -141,7 +131,6 @@
             <systemPath>${project.basedir}/lib/TableLayout.jar</systemPath>
         </dependency>
 
-        <!-- Adicione as outras dependências da mesma forma -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -151,5 +140,19 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version> 
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
