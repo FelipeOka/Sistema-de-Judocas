@@ -1,5 +1,6 @@
 package org.fpij.jitakyoei.model.unit;
 
+import java.util.Arrays;
 import java.util.List;
 import org.fpij.jitakyoei.business.AlunoBOImpl;
 import org.fpij.jitakyoei.model.beans.Aluno;
@@ -69,7 +70,7 @@ public class AlunoBOImplUnitTest {
     @Test
     public void testSearchAlunoSucesso() throws Exception {
         Aluno aluno = new Aluno();
-        List<Aluno> alunosMock = List.of(new Aluno(), new Aluno());
+        List<Aluno> alunosMock = Arrays.asList(new Aluno(), new Aluno());
 
         AlunoBOImpl alunoBO = new AlunoBOImpl(appView);
         List<Aluno> result = alunoBO.searchAluno(aluno);
@@ -80,7 +81,7 @@ public class AlunoBOImplUnitTest {
 
     @Test
     public void testListAllSucesso() throws Exception {
-        List<Aluno> alunosMock = List.of(new Aluno(), new Aluno(), new Aluno());
+        List<Aluno> alunosMock = Arrays.asList(new Aluno(), new Aluno(), new Aluno());
 
         AlunoBOImpl alunoBO = new AlunoBOImpl(appView);
         List<Aluno> result = alunoBO.listAll();

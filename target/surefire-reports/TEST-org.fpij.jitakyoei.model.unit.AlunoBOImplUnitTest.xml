@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest" time="2.048" tests="6" errors="4" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\target\test-classes;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\target\classes;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-annotation-jdk5-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-aspect-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-swing-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-swt-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-thinlet-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-container-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-server-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-shared-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-shared-annotated-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\forms.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\db4o-7.4.106.13438-java5.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\jcalendar-1.3.3.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\TableLayout.jar;C:\Users\Ana Jéssica\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Ana Jéssica\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Ana Jéssica\.m2\repository\jmock\jmock-cglib\1.0.1\jmock-cglib-1.0.1.jar;C:\Users\Ana Jéssica\.m2\repository\jmock\jmock\1.0.1\jmock-1.0.1.jar;C:\Users\Ana Jéssica\.m2\repository\cglib\cglib-full\2.0\cglib-full-2.0.jar;C:\Users\Ana Jéssica\.m2\repository\org\mockito\mockito-scala-specs2_2.13\1.17.37\mockito-scala-specs2_2.13-1.17.37.jar;C:\Users\Ana Jéssica\.m2\repository\org\scala-lang\scala-library\2.13.14\scala-library-2.13.14.jar;C:\Users\Ana Jéssica\.m2\repository\org\mockito\mockito-scala_2.13\1.17.37\mockito-scala_2.13-1.17.37.jar;C:\Users\Ana Jéssica\.m2\repository\org\mockito\mockito-core\4.8.1\mockito-core-4.8.1.jar;C:\Users\Ana Jéssica\.m2\repository\net\bytebuddy\byte-buddy\1.12.16\byte-buddy-1.12.16.jar;C:\Users\Ana Jéssica\.m2\repository\net\bytebuddy\byte-buddy-agent\1.12.16\byte-buddy-agent-1.12.16.jar;C:\Users\Ana Jéssica\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;C:\Users\Ana Jéssica\.m2\repository\org\scalactic\scalactic_2.13\3.2.19\scalactic_2.13-3.2.19.jar;C:\Users\Ana Jéssica\.m2\repository\ru\vyarus\generics-resolver\3.0.3\generics-resolver-3.0.3.jar;C:\Users\Ana Jéssica\.m2\repository\org\scala-lang\scala-reflect\2.13.14\scala-reflect-2.13.14.jar;C:\Users\Ana Jéssica\.m2\repository\org\scala-lang\modules\scala-parallel-collections_2.13\1.0.4\scala-parallel-collections_2.13-1.0.4.jar;"/>
+    <property name="java.vm.vendor" value="OpenLogic-OpenJDK"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\Ana Jéssica\AppData\Local\Temp\surefire7114202476629933666\surefirebooter7556059477876707730.jar C:\Users\Ana Jéssica\AppData\Local\Temp\surefire7114202476629933666 2024-12-02T00-36-32_694-jvmRun1 surefire591577854524601588tmp surefire_0553735109923940181tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\target\test-classes;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\target\classes;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-annotation-jdk5-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-aspect-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-swing-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-swt-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-thinlet-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-container-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-server-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-shared-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-shared-annotated-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\forms.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\db4o-7.4.106.13438-java5.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\jcalendar-1.3.3.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\TableLayout.jar;C:\Users\Ana Jéssica\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Ana Jéssica\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Ana Jéssica\.m2\repository\jmock\jmock-cglib\1.0.1\jmock-cglib-1.0.1.jar;C:\Users\Ana Jéssica\.m2\repository\jmock\jmock\1.0.1\jmock-1.0.1.jar;C:\Users\Ana Jéssica\.m2\repository\cglib\cglib-full\2.0\cglib-full-2.0.jar;C:\Users\Ana Jéssica\.m2\repository\org\mockito\mockito-scala-specs2_2.13\1.17.37\mockito-scala-specs2_2.13-1.17.37.jar;C:\Users\Ana Jéssica\.m2\repository\org\scala-lang\scala-library\2.13.14\scala-library-2.13.14.jar;C:\Users\Ana Jéssica\.m2\repository\org\mockito\mockito-scala_2.13\1.17.37\mockito-scala_2.13-1.17.37.jar;C:\Users\Ana Jéssica\.m2\repository\org\mockito\mockito-core\4.8.1\mockito-core-4.8.1.jar;C:\Users\Ana Jéssica\.m2\repository\net\bytebuddy\byte-buddy\1.12.16\byte-buddy-1.12.16.jar;C:\Users\Ana Jéssica\.m2\repository\net\bytebuddy\byte-buddy-agent\1.12.16\byte-buddy-agent-1.12.16.jar;C:\Users\Ana Jéssica\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;C:\Users\Ana Jéssica\.m2\repository\org\scalactic\scalactic_2.13\3.2.19\scalactic_2.13-3.2.19.jar;C:\Users\Ana Jéssica\.m2\repository\ru\vyarus\generics-resolver\3.0.3\generics-resolver-3.0.3.jar;C:\Users\Ana Jéssica\.m2\repository\org\scala-lang\scala-reflect\2.13.14\scala-reflect-2.13.14.jar;C:\Users\Ana Jéssica\.m2\repository\org\scala-lang\modules\scala-parallel-collections_2.13\1.0.4\scala-parallel-collections_2.13-1.0.4.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Ana Jéssica"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre"/>
+    <property name="basedir" value="C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\Ana Jéssica\AppData\Local\Temp\surefire7114202476629933666\surefirebooter7556059477876707730.jar;C:\\Users\\Ana Jéssica\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.7\\org.jacoco.agent-0.8.7-runtime.jar"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\resources.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\rt.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\sunrsasign.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\jsse.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\jce.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\charsets.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\jfr.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_432-432-b06"/>
+    <property name="user.name" value="Ana Jéssica"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Ana Jéssica\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\ANAJSS~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="1.8.0_432-432"/>
+    <property name="user.dir" value="C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Ana Jéssica\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Ana Jéssica\bin;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\bin;C:\Python312\Scripts;C:\Python312;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\apache-maven\apache-maven-3.9.9\bin;C:\Users\Ana Jéssica\AppData\Local\Microsoft\WindowsApps;C:\Users\Ana Jéssica\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ana Jéssica\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\Ana Jéssica\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="OpenLogic-OpenJDK"/>
+    <property name="java.vm.version" value="25.432-b06"/>
+    <property name="java.specification.maintenance.version" value="6"/>
+    <property name="java.ext.dirs" value="C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testCreateSucesso" classname="org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest" time="2">
+    <error type="java.lang.ExceptionInInitializerError"><![CDATA[java.lang.ExceptionInInitializerError
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testCreateSucesso(AlunoBOImplUnitTest.java:33)
+Caused by: com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testCreateSucesso(AlunoBOImplUnitTest.java:33)
+]]></error>
+    <system-out><![CDATA[AlunoBOImpl.createAluno()
+]]></system-out>
+  </testcase>
+  <testcase name="testSearchAlunoSucesso" classname="org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest" time="0.011">
+    <error message="Desculpe, ocorreu um erro desconhecido ao buscar os aluno." type="java.lang.Exception"><![CDATA[java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao buscar os aluno.
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testSearchAlunoSucesso(AlunoBOImplUnitTest.java:76)
+]]></error>
+    <system-err><![CDATA[com.db4o.ext.DatabaseClosedException
+	at com.db4o.internal.PartialObjectContainer.checkClosed(PartialObjectContainer.java:284)
+	at com.db4o.internal.PartialObjectContainer.checkTransaction(PartialObjectContainer.java:312)
+	at com.db4o.internal.PartialObjectContainer.queryByExample(PartialObjectContainer.java:737)
+	at com.db4o.internal.ExternalObjectContainer.queryByExample(ExternalObjectContainer.java:76)
+	at org.fpij.jitakyoei.model.dao.DAOImpl.search(DAOImpl.java:88)
+	at org.fpij.jitakyoei.business.AlunoBOImpl.searchAluno(AlunoBOImpl.java:64)
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testSearchAlunoSucesso(AlunoBOImplUnitTest.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+]]></system-err>
+  </testcase>
+  <testcase name="testCreateFalhaSemFiliado" classname="org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest" time="0">
+    <error message="Unexpected exception, expected&lt;java.lang.Exception&gt; but was&lt;java.lang.NoClassDefFoundError&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<java.lang.Exception> but was<java.lang.NoClassDefFoundError>
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testCreateFalhaSemFiliado(AlunoBOImplUnitTest.java:43)
+]]></error>
+    <system-out><![CDATA[AlunoBOImpl.createAluno()
+]]></system-out>
+  </testcase>
+  <testcase name="testListAllSucesso" classname="org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest" time="0.017">
+    <error message="Desculpe, ocorreu um erro desconhecido o obter a lista de alunos." type="java.lang.Exception"><![CDATA[java.lang.Exception: Desculpe, ocorreu um erro desconhecido o obter a lista de alunos.
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testListAllSucesso(AlunoBOImplUnitTest.java:87)
+]]></error>
+    <system-err><![CDATA[com.db4o.ext.DatabaseClosedException
+	at com.db4o.internal.PartialObjectContainer.checkClosed(PartialObjectContainer.java:284)
+	at com.db4o.internal.PartialObjectContainer.checkTransaction(PartialObjectContainer.java:312)
+	at com.db4o.internal.PartialObjectContainer.queryByExample(PartialObjectContainer.java:737)
+	at com.db4o.internal.ExternalObjectContainer.queryByExample(ExternalObjectContainer.java:76)
+	at org.fpij.jitakyoei.model.dao.DAOImpl.list(DAOImpl.java:59)
+	at org.fpij.jitakyoei.business.AlunoBOImpl.listAll(AlunoBOImpl.java:79)
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testListAllSucesso(AlunoBOImplUnitTest.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+]]></system-err>
+  </testcase>
+  <testcase name="testUpdateAlunoErroGenerico" classname="org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest" time="0.005">
+    <system-err><![CDATA[com.db4o.ext.DatabaseClosedException
+	at com.db4o.internal.PartialObjectContainer.checkClosed(PartialObjectContainer.java:284)
+	at com.db4o.internal.PartialObjectContainer.checkTransaction(PartialObjectContainer.java:312)
+	at com.db4o.internal.PartialObjectContainer.queryByExample(PartialObjectContainer.java:737)
+	at com.db4o.internal.ExternalObjectContainer.queryByExample(ExternalObjectContainer.java:76)
+	at org.fpij.jitakyoei.model.dao.DAOImpl.get(DAOImpl.java:68)
+	at org.fpij.jitakyoei.business.AlunoBOImpl.updateAluno(AlunoBOImpl.java:43)
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testUpdateAlunoErroGenerico(AlunoBOImplUnitTest.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+]]></system-err>
+  </testcase>
+  <testcase name="testUpdateAlunoFalhaDados" classname="org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest" time="0.014">
+    <system-err><![CDATA[com.db4o.ext.DatabaseClosedException
+	at com.db4o.internal.PartialObjectContainer.checkClosed(PartialObjectContainer.java:284)
+	at com.db4o.internal.PartialObjectContainer.checkTransaction(PartialObjectContainer.java:312)
+	at com.db4o.internal.PartialObjectContainer.queryByExample(PartialObjectContainer.java:737)
+	at com.db4o.internal.ExternalObjectContainer.queryByExample(ExternalObjectContainer.java:76)
+	at org.fpij.jitakyoei.model.dao.DAOImpl.get(DAOImpl.java:68)
+	at org.fpij.jitakyoei.business.AlunoBOImpl.updateAluno(AlunoBOImpl.java:43)
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testUpdateAlunoFalhaDados(AlunoBOImplUnitTest.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+]]></system-err>
+  </testcase>
+</testsuite>

@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 2.048 s <<< FAILURE! - in org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest
+org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testCreateSucesso  Time elapsed: 2 s  <<< ERROR!
+java.lang.ExceptionInInitializerError
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testCreateSucesso(AlunoBOImplUnitTest.java:33)
+Caused by: com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testCreateSucesso(AlunoBOImplUnitTest.java:33)
+
+org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testSearchAlunoSucesso  Time elapsed: 0.011 s  <<< ERROR!
+java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao buscar os aluno.
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testSearchAlunoSucesso(AlunoBOImplUnitTest.java:76)
+
+org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testCreateFalhaSemFiliado  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<java.lang.Exception> but was<java.lang.NoClassDefFoundError>
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testCreateFalhaSemFiliado(AlunoBOImplUnitTest.java:43)
+
+org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testListAllSucesso  Time elapsed: 0.017 s  <<< ERROR!
+java.lang.Exception: Desculpe, ocorreu um erro desconhecido o obter a lista de alunos.
+	at org.fpij.jitakyoei.model.unit.AlunoBOImplUnitTest.testListAllSucesso(AlunoBOImplUnitTest.java:87)
+

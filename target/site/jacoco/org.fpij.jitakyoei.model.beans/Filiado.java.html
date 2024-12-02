@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Filiado.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.model.beans</a> &gt; <span class="el_source">Filiado.java</span></div><h1>Filiado.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.model.beans;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+<span class="fc" id="L7">public class Filiado {</span>
+	Long id;
+	String nome;
+	String registroCbj;
+	Date dataNascimento;
+	Date dataCadastro;
+	String telefone1;
+	String telefone2;
+	String email;
+	String cpf;
+	String observacoes;
+<span class="fc" id="L18">	Rg rg = new Rg();</span>
+<span class="fc" id="L19">	Endereco endereco = new Endereco();</span>
+<span class="fc" id="L20">	List&lt;Faixa&gt; faixas = new ArrayList&lt;Faixa&gt;();</span>
+	
+	public String toString(){
+<span class="fc" id="L23">		String filiado = &quot;Nome: &quot;+nome+</span>
+						&quot;\nRegistroCbj: &quot;+registroCbj+
+						&quot;\nDataNasc: &quot;+dataNascimento+
+						&quot;\nE-mail: &quot;+email+
+						&quot;\nCPF: &quot;+cpf;
+<span class="fc" id="L28">		return filiado;</span>
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+<span class="nc bnc" id="L33" title="All 2 branches missed.">		if(obj instanceof Filiado){</span>
+<span class="nc" id="L34">			Filiado other = (Filiado) obj;</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">			return 	id == other.id &amp;&amp;</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">					nome.equals(other.nome);</span>
+		}
+<span class="nc" id="L38">		return false;</span>
+	}
+	
+	@Override
+	public int hashCode() {
+<span class="nc" id="L43">		return (int)(long) id;</span>
+	}
+	
+	public Long getId() {
+<span class="nc" id="L47">		return id;</span>
+	}
+	public void setId(Long id) {
+<span class="fc" id="L50">		this.id = id;</span>
+<span class="fc" id="L51">	}</span>
+	public String getNome() {
+<span class="fc" id="L53">		return nome;</span>
+	}
+	public void setNome(String nome) {
+<span class="fc" id="L56">		this.nome = nome;</span>
+<span class="fc" id="L57">	}</span>
+	public String getRegistroCbj() {
+<span class="nc" id="L59">		return registroCbj;</span>
+	}
+	public void setRegistroCbj(String registroCbj) {
+<span class="nc" id="L62">		this.registroCbj = registroCbj;</span>
+<span class="nc" id="L63">	}</span>
+	public Date getDataNascimento() {
+<span class="nc" id="L65">		return dataNascimento;</span>
+	}
+	public void setDataNascimento(Date dataNascimento) {
+<span class="fc" id="L68">		this.dataNascimento = dataNascimento;</span>
+<span class="fc" id="L69">	}</span>
+	public Date getDataCadastro() {
+<span class="nc" id="L71">		return dataCadastro;</span>
+	}
+	public void setDataCadastro(Date dataCadastro) {
+<span class="fc" id="L74">		this.dataCadastro = dataCadastro;</span>
+<span class="fc" id="L75">	}</span>
+	public Endereco getEndereco() {
+<span class="fc" id="L77">		return endereco;</span>
+	}
+	public void setEndereco(Endereco endereco) {
+<span class="fc" id="L80">		this.endereco = endereco;</span>
+<span class="fc" id="L81">	}</span>
+	public String getTelefone1() {
+<span class="nc" id="L83">		return telefone1;</span>
+	}
+	public void setTelefone1(String telefone1) {
+<span class="nc" id="L86">		this.telefone1 = telefone1;</span>
+<span class="nc" id="L87">	}</span>
+	public String getTelefone2() {
+<span class="nc" id="L89">		return telefone2;</span>
+	}
+	public void setTelefone2(String telefone2) {
+<span class="nc" id="L92">		this.telefone2 = telefone2;</span>
+<span class="nc" id="L93">	}</span>
+	public String getEmail() {
+<span class="nc" id="L95">		return email;</span>
+	}
+	public void setEmail(String email) {
+<span class="nc" id="L98">		this.email = email;</span>
+<span class="nc" id="L99">	}</span>
+	public Rg getRg() {
+<span class="nc" id="L101">		return rg;</span>
+	}
+	public void setRg(Rg rg) {
+<span class="nc" id="L104">		this.rg = rg;</span>
+<span class="nc" id="L105">	}</span>
+	public String getCpf() {
+<span class="fc" id="L107">		return cpf;</span>
+	}
+	public void setCpf(String cpf) {
+<span class="fc" id="L110">		this.cpf = cpf;</span>
+<span class="fc" id="L111">	}</span>
+	public List&lt;Faixa&gt; getFaixas() {
+<span class="nc" id="L113">		return faixas;</span>
+	}
+	public void setFaixas(List&lt;Faixa&gt; faixas) {
+<span class="nc" id="L116">		this.faixas = faixas;</span>
+<span class="nc" id="L117">	}</span>
+
+	public String getObservacoes() {
+<span class="nc" id="L120">		return observacoes;</span>
+	}
+
+	public void setObservacoes(String observacoes) {
+<span class="nc" id="L124">		this.observacoes = observacoes;</span>
+<span class="nc" id="L125">	}</span>
+
+	public void copyProperties(Filiado f) {
+<span class="nc" id="L128">		id = f.id;</span>
+<span class="nc" id="L129">		nome = f.nome;</span>
+<span class="nc" id="L130">		registroCbj = f.registroCbj;</span>
+<span class="nc" id="L131">		dataNascimento = f.dataNascimento;</span>
+<span class="nc" id="L132">		dataCadastro = f.dataCadastro;</span>
+<span class="nc" id="L133">		endereco = f.endereco;</span>
+<span class="nc" id="L134">		telefone1 = f.telefone1;</span>
+<span class="nc" id="L135">		telefone2 = f.telefone2;</span>
+<span class="nc" id="L136">		email = f.email;</span>
+<span class="nc" id="L137">		rg = f.rg;</span>
+<span class="nc" id="L138">		cpf = f.cpf;</span>
+<span class="nc" id="L139">		observacoes = f.observacoes;</span>
+<span class="nc" id="L140">		faixas.clear();</span>
+<span class="nc" id="L141">		faixas.addAll(f.faixas);</span>
+<span class="nc" id="L142">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

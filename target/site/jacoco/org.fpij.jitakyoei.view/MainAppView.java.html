@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainAppView.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view</a> &gt; <span class="el_source">MainAppView.java</span></div><h1>MainAppView.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.view;
+
+import java.awt.Component;
+import java.awt.Dialog.ModalityType;
+
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import net.java.dev.genesis.annotation.Action;
+import net.java.dev.genesis.annotation.Form;
+import net.java.dev.genesis.ui.swing.SwingBinder;
+
+import org.fpij.jitakyoei.facade.AppFacade;
+import org.fpij.jitakyoei.model.beans.Aluno;
+import org.fpij.jitakyoei.model.beans.Entidade;
+import org.fpij.jitakyoei.model.beans.Professor;
+import org.fpij.jitakyoei.util.CloseTabIcon;
+import org.fpij.jitakyoei.view.gui.MainAppFrame;
+import org.fpij.jitakyoei.view.gui.SobrePanel;
+
+@Form
+public class MainAppView implements AppView {
+	MainAppFrame frame;
+	private AppFacade facade;
+
+<span class="nc" id="L27">	public MainAppView() {</span>
+<span class="nc" id="L28">		frame = new MainAppFrame();</span>
+<span class="nc" id="L29">		new SwingBinder(frame, this).bind();</span>
+<span class="nc" id="L30">		frame.setVisible(true);</span>
+<span class="nc" id="L31">	}</span>
+
+	@Override
+	public void handleModelChange(Object obj) {
+		/**
+		 * TODO: Atualizar os dados dos panels abertos
+		 */
+<span class="nc" id="L38">	}</span>
+
+	public void displayException(Exception e) {
+<span class="nc" id="L41">		JOptionPane.showMessageDialog(frame, e.getMessage());</span>
+<span class="nc" id="L42">	}</span>
+
+	private void displayTabPanel(ViewComponent viewComponent, String titulo) {
+<span class="nc" id="L45">		viewComponent.registerFacade(this.facade);</span>
+<span class="nc" id="L46">		frame.getTabbedPane().addTab(&quot; &quot; + titulo + &quot;  &quot;, new CloseTabIcon(), viewComponent.getGui(), titulo);</span>
+<span class="nc" id="L47">		frame.getTabbedPane().setSelectedComponent(viewComponent.getGui());</span>
+<span class="nc" id="L48">		frame.repaint();</span>
+<span class="nc" id="L49">		frame.setVisible(true);</span>
+<span class="nc" id="L50">		frame.validate();</span>
+<span class="nc" id="L51">	}</span>
+
+	private void displayPanel(JPanel panel, String titulo) {
+<span class="nc" id="L54">		frame.getTabbedPane().addTab(&quot; &quot; + titulo + &quot;  &quot;, new CloseTabIcon(), panel, titulo);</span>
+<span class="nc" id="L55">		frame.getTabbedPane().setSelectedComponent(panel);</span>
+<span class="nc" id="L56">		frame.repaint();</span>
+<span class="nc" id="L57">		frame.setVisible(true);</span>
+<span class="nc" id="L58">		frame.validate();</span>
+<span class="nc" id="L59">	}</span>
+	
+	public void removeTabPanel(Component viewComponent){
+<span class="nc" id="L62">		frame.getTabbedPane().remove(viewComponent);</span>
+<span class="nc" id="L63">	}</span>
+
+	/* Ações de Aluno */
+	@Action
+	public void cadastrarAlunoMenuItem() {
+<span class="nc" id="L68">		displayTabPanel(new AlunoCadastrarView(this), &quot;Cadastrar Aluno&quot;);</span>
+<span class="nc" id="L69">	}</span>
+
+	@Action
+	public void cadastrarAlunoIcon() {
+<span class="nc" id="L73">		cadastrarAlunoMenuItem();</span>
+<span class="nc" id="L74">	}</span>
+
+	@Action
+	public void alterarAlunoMenuItem() {
+		try {
+<span class="nc" id="L79">			JDialog dialog = new JDialog(frame);</span>
+<span class="nc" id="L80">			dialog.setTitle(&quot;Selecione o Aluno a ser Alterado&quot;);</span>
+<span class="nc" id="L81">			AlunoBuscarView buscarView = new AlunoBuscarView(AlunoBuscarView.ALTERACAO);</span>
+<span class="nc" id="L82">			buscarView.registerFacade(facade);</span>
+<span class="nc" id="L83">			dialog.getContentPane().add(buscarView.getGui());</span>
+<span class="nc" id="L84">			dialog.setModalityType(ModalityType.APPLICATION_MODAL);</span>
+<span class="nc" id="L85">			dialog.setSize(600, 450);</span>
+<span class="nc" id="L86">			dialog.setLocationRelativeTo(frame);</span>
+<span class="nc" id="L87">			dialog.setVisible(true);</span>
+<span class="nc" id="L88">			Aluno alunoSelecionado = buscarView.getSelectedAluno();</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">			if (alunoSelecionado != null) {</span>
+<span class="nc" id="L90">				AlunoAtualizarView atualizarView = new AlunoAtualizarView(this, alunoSelecionado);</span>
+<span class="nc" id="L91">				displayTabPanel(atualizarView, &quot;Alterar Aluno&quot;);</span>
+			}
+<span class="nc" id="L93">		} catch (Exception e) {</span>
+<span class="nc" id="L94">			e.printStackTrace();</span>
+<span class="nc" id="L95">		}</span>
+<span class="nc" id="L96">	}</span>
+
+	@Action
+	public void alterarAlunoIcon() {
+<span class="nc" id="L100">		alterarAlunoMenuItem();</span>
+<span class="nc" id="L101">	}</span>
+
+	@Action
+	public void buscarAlunoMenuItem() {
+<span class="nc" id="L105">		displayTabPanel(new AlunoBuscarView(), &quot;Buscar Aluno&quot;);</span>
+<span class="nc" id="L106">	}</span>
+
+	@Action
+	public void buscarAlunoIcon() {
+<span class="nc" id="L110">		buscarAlunoMenuItem();</span>
+<span class="nc" id="L111">	}</span>
+
+	// Ações de Professor
+	@Action
+	public void cadastrarProfessorMenuItem() {
+<span class="nc" id="L116">		int i = JOptionPane.showConfirmDialog(frame,</span>
+				&quot;O professor já tem registro como aluno na FPIJ?&quot;,
+				&quot;Confirmação&quot;, JOptionPane.YES_NO_OPTION);
+
+<span class="nc bnc" id="L120" title="All 2 branches missed.">		if (i == JOptionPane.YES_OPTION) {</span>
+<span class="nc" id="L121">			JDialog dialog = new JDialog(frame);</span>
+<span class="nc" id="L122">			ProfessorBuscarView view = new ProfessorBuscarView();</span>
+<span class="nc" id="L123">			view.registerFacade(facade);</span>
+<span class="nc" id="L124">			dialog.getContentPane().add(view.getGui());</span>
+<span class="nc" id="L125">			dialog.setModalityType(ModalityType.APPLICATION_MODAL);</span>
+<span class="nc" id="L126">			dialog.setSize(600, 400);</span>
+<span class="nc" id="L127">			dialog.setLocationRelativeTo(frame);</span>
+<span class="nc" id="L128">			dialog.setVisible(true);</span>
+<span class="nc" id="L129">		} else {</span>
+<span class="nc" id="L130">			displayTabPanel(new ProfessorCadastrarView(this), &quot;Cadastrar Professor&quot;);</span>
+		}
+<span class="nc" id="L132">	}</span>
+
+	@Action
+	public void cadastrarProfessorIcon() {
+<span class="nc" id="L136">		cadastrarProfessorMenuItem();</span>
+<span class="nc" id="L137">	}</span>
+
+	@Action
+	public void alterarProfessorMenuItem() {
+		try {
+<span class="nc" id="L142">			JDialog dialog = new JDialog(frame);</span>
+<span class="nc" id="L143">			dialog.setTitle(&quot;Selecione o Professor a ser Alterado&quot;);</span>
+<span class="nc" id="L144">			ProfessorBuscarView buscarView = new ProfessorBuscarView(ProfessorBuscarView.ALTERACAO);</span>
+<span class="nc" id="L145">			buscarView.registerFacade(facade);</span>
+<span class="nc" id="L146">			dialog.getContentPane().add(buscarView.getGui());</span>
+<span class="nc" id="L147">			dialog.setModalityType(ModalityType.APPLICATION_MODAL);</span>
+<span class="nc" id="L148">			dialog.setSize(600, 450);</span>
+<span class="nc" id="L149">			dialog.setLocationRelativeTo(frame);</span>
+<span class="nc" id="L150">			dialog.setVisible(true);</span>
+<span class="nc" id="L151">			Professor professorSelecionado = buscarView.getSelectedProfessor();</span>
+<span class="nc bnc" id="L152" title="All 2 branches missed.">			if (professorSelecionado != null) {</span>
+<span class="nc" id="L153">				ProfessorAtualizarView atualizarView = new ProfessorAtualizarView(this, professorSelecionado);</span>
+<span class="nc" id="L154">				displayTabPanel(atualizarView, &quot;Alterar Professor&quot;);</span>
+			}
+<span class="nc" id="L156">		} catch (Exception e) {</span>
+<span class="nc" id="L157">			e.printStackTrace();</span>
+<span class="nc" id="L158">		}</span>
+<span class="nc" id="L159">	}</span>
+
+	@Action
+	public void alterarProfessorIcon() {
+<span class="nc" id="L163">		alterarProfessorMenuItem();</span>
+<span class="nc" id="L164">	}</span>
+
+	@Action
+	public void buscarProfessorMenuItem() {
+<span class="nc" id="L168">		displayTabPanel(new ProfessorBuscarView(), &quot;Buscar Professor&quot;);</span>
+<span class="nc" id="L169">	}</span>
+
+	@Action
+	public void buscarProfessorIcon() {
+<span class="nc" id="L173">		buscarProfessorMenuItem();</span>
+<span class="nc" id="L174">	}</span>
+
+	// Ações de Entidade
+	@Action
+	public void cadastrarEntidadeMenuItem() {
+<span class="nc" id="L179">		displayTabPanel(new EntidadeCadastrarView(this), &quot;Cadastrar Entidade&quot;);</span>
+<span class="nc" id="L180">	}</span>
+
+	@Action
+	public void cadastrarEntidadeIcon() {
+<span class="nc" id="L184">		cadastrarEntidadeMenuItem();</span>
+<span class="nc" id="L185">	}</span>
+
+	@Action
+	public void alterarEntidadeMenuItem() {
+<span class="nc" id="L189">		JDialog dialog = new JDialog(frame);</span>
+<span class="nc" id="L190">		dialog.setTitle(&quot;Selecione a Entidade a ser alterada&quot;);</span>
+<span class="nc" id="L191">		EntidadeBuscarView buscarView = new EntidadeBuscarView(EntidadeBuscarView.ALTERACAO);</span>
+<span class="nc" id="L192">		buscarView.registerFacade(facade);</span>
+<span class="nc" id="L193">		dialog.getContentPane().add(buscarView.getGui());</span>
+<span class="nc" id="L194">		dialog.setModalityType(ModalityType.APPLICATION_MODAL);</span>
+<span class="nc" id="L195">		dialog.setSize(600, 450);</span>
+<span class="nc" id="L196">		dialog.setLocationRelativeTo(frame);</span>
+<span class="nc" id="L197">		dialog.setVisible(true);</span>
+<span class="nc" id="L198">		Entidade entidadeSelecionada = buscarView.getSelectedEntidade();</span>
+<span class="nc bnc" id="L199" title="All 2 branches missed.">		if (entidadeSelecionada != null) {</span>
+<span class="nc" id="L200">			EntidadeAtualizarView atualizarView = new EntidadeAtualizarView(this, entidadeSelecionada);</span>
+<span class="nc" id="L201">			displayTabPanel(atualizarView, &quot;Alterar Entidade&quot;);</span>
+		}
+<span class="nc" id="L203">	}</span>
+
+	@Action
+	public void alterarEntidadeIcon() {
+<span class="nc" id="L207">		alterarEntidadeMenuItem();</span>
+<span class="nc" id="L208">	}</span>
+
+	@Action
+	public void buscarEntidadeMenuItem() {
+<span class="nc" id="L212">		displayTabPanel(new EntidadeBuscarView(), &quot;Busca de Entidade&quot;);</span>
+<span class="nc" id="L213">	}</span>
+
+	@Action
+	public void buscarEntidadeIcon() {
+<span class="nc" id="L217">		buscarEntidadeMenuItem();</span>
+<span class="nc" id="L218">	}</span>
+
+
+	@Action
+	public void sobreMenuItem() {
+<span class="nc" id="L223">		displayPanel(new SobrePanel(), &quot;Desenvolvedores&quot;);</span>
+<span class="nc" id="L224">	}</span>
+
+	@Action
+	public void botaoSplash() {
+<span class="nc" id="L228">		sobreMenuItem();</span>
+<span class="nc" id="L229">	}</span>
+
+	@Override
+	public void registerFacade(AppFacade facade) {
+<span class="nc" id="L233">		this.facade = facade;</span>
+<span class="nc" id="L234">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

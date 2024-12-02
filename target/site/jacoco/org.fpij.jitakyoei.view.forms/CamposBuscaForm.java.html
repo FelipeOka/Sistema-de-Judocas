@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CamposBuscaForm.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view.forms</a> &gt; <span class="el_source">CamposBuscaForm.java</span></div><h1>CamposBuscaForm.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.view.forms;
+
+import org.fpij.jitakyoei.view.gui.BuscaCamposPanel;
+
+public class CamposBuscaForm {
+	private BuscaCamposPanel buscaCamposPanel;
+	
+<span class="nc" id="L8">	public CamposBuscaForm(BuscaCamposPanel buscaCamposPanel) {</span>
+<span class="nc" id="L9">		this.buscaCamposPanel = buscaCamposPanel;</span>
+<span class="nc" id="L10">	}</span>
+
+	public String getNome() {
+<span class="nc" id="L13">		return buscaCamposPanel.getNome().getText();</span>
+	}
+
+	public void setNome(String nome) {
+<span class="nc" id="L17">		buscaCamposPanel.getNome().setText(nome);</span>
+<span class="nc" id="L18">	}</span>
+
+	public String getRegistroFpij() {
+<span class="nc" id="L21">		return buscaCamposPanel.getRegistroFpij().getText();</span>
+	}
+
+	public void setRegistroFpij(String registroFpij) {
+<span class="nc" id="L25">		buscaCamposPanel.getRegistroFpij().setText(registroFpij);</span>
+<span class="nc" id="L26">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

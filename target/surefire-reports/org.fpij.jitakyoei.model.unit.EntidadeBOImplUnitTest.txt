@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.051 s <<< FAILURE! - in org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest
+org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testUpdateEntidadeSucesso  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao salvar a entidade.
+	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testUpdateEntidadeSucesso(EntidadeBOImplUnitTest.java:94)
+
+org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testCreateEntidadeFalha  Time elapsed: 0.012 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.Exception>
+	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testCreateEntidadeFalha(EntidadeBOImplUnitTest.java:45)
+
+org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testSearchEntidadeFalha  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<java.lang.AssertionError> but was<java.lang.Exception>
+	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testSearchEntidadeFalha(EntidadeBOImplUnitTest.java:85)
+
+org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testUpdateEntidadeFalha  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.Exception>
+	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testUpdateEntidadeFalha(EntidadeBOImplUnitTest.java:110)
+
+org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testCreateEntidadeSucesso  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao salvar a entidade.
+	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testCreateEntidadeSucesso(EntidadeBOImplUnitTest.java:34)
+
+org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testListAllEntidadeSucesso  Time elapsed: 0.008 s  <<< ERROR!
+java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao salvar a entidade.
+	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testListAllEntidadeSucesso(EntidadeBOImplUnitTest.java:53)
+
+org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testSearchEntidadeSucesso  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao salvar a entidade.
+	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testSearchEntidadeSucesso(EntidadeBOImplUnitTest.java:71)
+

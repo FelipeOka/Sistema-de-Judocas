@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: org.fpij.jitakyoei.model.dao.AlunoTest
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 1.538 s <<< FAILURE! - in org.fpij.jitakyoei.model.dao.AlunoTest
+org.fpij.jitakyoei.model.dao.AlunoTest.testDeletarAlunoInexistente  Time elapsed: 0.149 s  <<< FAILURE!
+java.lang.AssertionError: Expected exception: java.lang.Exception
+
+org.fpij.jitakyoei.model.dao.AlunoTest.testSalvarAlunoComDadosObrigatoriosAusentes  Time elapsed: 0.011 s  <<< FAILURE!
+java.lang.AssertionError: Expected exception: java.lang.Exception
+
+org.fpij.jitakyoei.model.dao.AlunoTest.testAtualizarAlunoComDadosInvalidos  Time elapsed: 0.021 s  <<< FAILURE!
+java.lang.AssertionError: Expected exception: java.lang.Exception
+
+org.fpij.jitakyoei.model.dao.AlunoTest.testAtualizarAlunoComDadosObrigatoriosAusentes  Time elapsed: 0.029 s  <<< FAILURE!
+java.lang.AssertionError: Expected exception: java.lang.Exception
+
+org.fpij.jitakyoei.model.dao.AlunoTest.testAtualizarAlunoInexistente  Time elapsed: 0.006 s  <<< FAILURE!
+java.lang.AssertionError: Expected exception: java.lang.Exception
+
+org.fpij.jitakyoei.model.dao.AlunoTest.testAtualizarAluno  Time elapsed: 0.013 s  <<< FAILURE!
+java.lang.AssertionError: expected:<Aécio> but was:<null>
+	at org.fpij.jitakyoei.model.dao.AlunoTest.testAtualizarAluno(AlunoTest.java:113)
+

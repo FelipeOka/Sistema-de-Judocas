@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------------
+Test set: org.fpij.jitakyoei.model.dao.ProfessorTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in org.fpij.jitakyoei.model.dao.ProfessorTest
+org.fpij.jitakyoei.model.dao.ProfessorTest.testDeletarProfessor  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.clearDatabase(ProfessorTest.java:47)
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.testDeletarProfessor(ProfessorTest.java:204)
+
+org.fpij.jitakyoei.model.dao.ProfessorTest.testAtualizarProfessor  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.clearDatabase(ProfessorTest.java:47)
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.testAtualizarProfessor(ProfessorTest.java:124)
+
+org.fpij.jitakyoei.model.dao.ProfessorTest.testBuscarProfessorPorNome  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.clearDatabase(ProfessorTest.java:47)
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.testBuscarProfessorPorNome(ProfessorTest.java:175)
+
+org.fpij.jitakyoei.model.dao.ProfessorTest.testBuscarProfessorInexistente  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.clearDatabase(ProfessorTest.java:47)
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.testBuscarProfessorInexistente(ProfessorTest.java:191)
+
+org.fpij.jitakyoei.model.dao.ProfessorTest.testSalvarProfessorComDadosValidos  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.clearDatabase(ProfessorTest.java:47)
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.testSalvarProfessorComDadosValidos(ProfessorTest.java:56)
+
+org.fpij.jitakyoei.model.dao.ProfessorTest.testSalvarBuscarProfessorInexistente  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.clearDatabase(ProfessorTest.java:47)
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.testSalvarBuscarProfessorInexistente(ProfessorTest.java:79)
+
+org.fpij.jitakyoei.model.dao.ProfessorTest  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.clearDatabase(ProfessorTest.java:47)
+	at org.fpij.jitakyoei.model.dao.ProfessorTest.closeDatabase(ProfessorTest.java:271)
+

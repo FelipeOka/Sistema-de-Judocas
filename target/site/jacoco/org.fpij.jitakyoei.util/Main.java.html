@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.util</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.util;
+
+import java.util.Date;
+
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+
+import org.fpij.jitakyoei.facade.AppFacade;
+import org.fpij.jitakyoei.facade.AppFacadeImpl;
+import org.fpij.jitakyoei.model.beans.Endereco;
+import org.fpij.jitakyoei.model.beans.Entidade;
+import org.fpij.jitakyoei.model.beans.Filiado;
+import org.fpij.jitakyoei.model.beans.Professor;
+import org.fpij.jitakyoei.model.dao.DAO;
+import org.fpij.jitakyoei.model.dao.DAOImpl;
+import org.fpij.jitakyoei.view.AppView;
+import org.fpij.jitakyoei.view.MainAppView;
+
+<span class="nc" id="L19">public class Main {</span>
+	
+	public static void main(String[] args) {
+//		new StartupHelper().initialize();
+//		PlafOptions.setAsLookAndFeel();
+//		dbPopulator();
+		
+		try {
+<span class="nc bnc" id="L27" title="All 2 branches missed.">		    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">		        if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L29">		            UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L30">		            break;</span>
+		        }
+		    }
+<span class="nc" id="L33">		} catch (Exception e) {</span>
+<span class="nc" id="L34">			e.printStackTrace();</span>
+<span class="nc" id="L35">		}</span>
+<span class="nc" id="L36">		AppView view = new MainAppView();</span>
+<span class="nc" id="L37">		AppFacade facade = new AppFacadeImpl(view);</span>
+<span class="nc" id="L38">		view.registerFacade(facade);</span>
+<span class="nc" id="L39">	}</span>
+	
+	public static void dbPopulator(){
+<span class="nc" id="L42">		Endereco endereco = new Endereco();</span>
+<span class="nc" id="L43">		endereco.setBairro(&quot;Dirceu&quot;);</span>
+<span class="nc" id="L44">		endereco.setCep(&quot;64078-213&quot;);</span>
+<span class="nc" id="L45">		endereco.setCidade(&quot;Teresina&quot;);</span>
+<span class="nc" id="L46">		endereco.setEstado(&quot;PI&quot;);</span>
+<span class="nc" id="L47">		endereco.setRua(&quot;Rua Des. Berilo Mota&quot;);</span>
+		
+<span class="nc" id="L49">		Filiado filiadoProf = new Filiado();</span>
+<span class="nc" id="L50">		filiadoProf.setNome(&quot;Neto&quot;);</span>
+<span class="nc" id="L51">		filiadoProf.setCpf(&quot;036.464.453-27&quot;);</span>
+<span class="nc" id="L52">		filiadoProf.setDataNascimento(new Date());</span>
+<span class="nc" id="L53">		filiadoProf.setDataCadastro(new Date());</span>
+<span class="nc" id="L54">		filiadoProf.setId(3332L);</span>
+<span class="nc" id="L55">		filiadoProf.setEndereco(endereco);</span>
+		
+<span class="nc" id="L57">		Professor professor = new Professor();</span>
+<span class="nc" id="L58">		professor.setFiliado(filiadoProf);</span>
+		
+<span class="nc" id="L60">		Entidade entidade = new Entidade();</span>
+<span class="nc" id="L61">		entidade.setEndereco(endereco);</span>
+<span class="nc" id="L62">		entidade.setNome(&quot;Ricardo Paraguasu&quot;);</span>
+<span class="nc" id="L63">		entidade.setTelefone1(&quot;(086)1234-5432&quot;);</span>
+		
+<span class="nc" id="L65">		DAO&lt;Professor&gt; dao = new DAOImpl&lt;Professor&gt;(Professor.class);</span>
+<span class="nc" id="L66">		dao.save(professor);</span>
+		
+<span class="nc" id="L68">		DAO&lt;Entidade&gt; daoEnt = new DAOImpl&lt;Entidade&gt;(Entidade.class);</span>
+<span class="nc" id="L69">		daoEnt.save(entidade);</span>
+<span class="nc" id="L70">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

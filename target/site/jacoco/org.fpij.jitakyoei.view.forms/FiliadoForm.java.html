@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FiliadoForm.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view.forms</a> &gt; <span class="el_source">FiliadoForm.java</span></div><h1>FiliadoForm.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.view.forms;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import javax.swing.table.DefaultTableModel;
+
+import org.fpij.jitakyoei.model.beans.Faixa;
+import org.fpij.jitakyoei.model.beans.Filiado;
+import org.fpij.jitakyoei.util.CorFaixa;
+import org.fpij.jitakyoei.view.gui.FiliadoPanel;
+
+public class FiliadoForm {
+	private Filiado filiado;
+	private FiliadoPanel filiadoPanel;
+	private EnderecoForm enderecoForm;
+	private SimpleDateFormat dataFormater;
+
+	/**
+	 * Contrutor padrão que recebe somente FiliadoPanel. Um novo Filiado será
+	 * instanciado.
+	 * 
+	 * @param enderecoPanel
+	 * @param endereco
+	 */
+<span class="nc" id="L29">	public FiliadoForm(FiliadoPanel filiadoPanel) {</span>
+<span class="nc" id="L30">		this.filiado = new Filiado();</span>
+<span class="nc" id="L31">		init(filiadoPanel);</span>
+<span class="nc" id="L32">	}</span>
+
+	/**
+	 * Contrutor que recebe um FiliadoPanel e um Filiado. O FiliadoPanel será
+	 * iniciado com os valores do Filiado passado por parâmetro.
+	 * 
+	 * @param enderecoPanel
+	 * @param endereco
+	 */
+<span class="nc" id="L41">	public FiliadoForm(FiliadoPanel filiadoPanel, Filiado filiado) {</span>
+<span class="nc" id="L42">		init(filiadoPanel);</span>
+<span class="nc" id="L43">		this.setFiliado(filiado);</span>
+<span class="nc" id="L44">	}</span>
+
+	/**
+	 * Inicializa os atributos da classe e a interface gráfica. Chamado somente
+	 * pelos contrutores da classe.
+	 * 
+	 * @param filiadoPanel
+	 * @param filiado
+	 */
+	private void init(FiliadoPanel filiadoPanel) {
+<span class="nc" id="L54">		this.filiadoPanel = filiadoPanel;</span>
+<span class="nc" id="L55">		this.enderecoForm = new EnderecoForm(filiadoPanel.getEnderecoPanel());</span>
+<span class="nc" id="L56">		this.dataFormater = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="nc" id="L57">		this.filiadoPanel.getAdicionarFaixa().addActionListener(</span>
+				new AdicionarFaixaActionHandler());
+<span class="nc" id="L59">		this.setCorFaixaItens(CorFaixa.getCoresFaixa());</span>
+<span class="nc" id="L60">	}</span>
+
+	/**
+	 * Atualiza a GUI com Filiado passado no parâmetro.
+	 * 
+	 * @param endereco
+	 */
+	public void setFiliado(Filiado filiado) {
+<span class="nc" id="L68">		this.filiado = filiado;</span>
+<span class="nc" id="L69">		setNome(filiado.getNome());</span>
+<span class="nc" id="L70">		setCpf(filiado.getCpf());</span>
+<span class="nc" id="L71">		setEmail(filiado.getEmail());</span>
+<span class="nc" id="L72">		setObservacoes(filiado.getObservacoes());</span>
+<span class="nc" id="L73">		setOrgaoExpedidor(filiado.getRg().getOrgaoExpedidor());</span>
+<span class="nc" id="L74">		setNumero(filiado.getRg().getNumero());</span>
+<span class="nc" id="L75">		setTelefone1(filiado.getTelefone1());</span>
+<span class="nc" id="L76">		setTelefone2(filiado.getTelefone2());</span>
+<span class="nc" id="L77">		setRegistroCbj(filiado.getRegistroCbj());</span>
+<span class="nc" id="L78">		setDataNascimento(filiado.getDataNascimento());</span>
+<span class="nc" id="L79">		setFaixasList(filiado.getFaixas());</span>
+<span class="nc" id="L80">		enderecoForm.setEndereco(filiado.getEndereco());</span>
+<span class="nc" id="L81">	}</span>
+
+	/**
+	 * Retorna um Filiado com os valores atualizados da GUI.
+	 * 
+	 * @return endereco
+	 */
+	public Filiado getFiliado() {
+<span class="nc" id="L89">		filiado.setDataNascimento(getDataNascimento());</span>
+<span class="nc" id="L90">		filiado.setEmail(getEmail());</span>
+<span class="nc" id="L91">		filiado.setCpf(getCpf());</span>
+<span class="nc" id="L92">		filiado.setNome(getNome());</span>
+<span class="nc" id="L93">		filiado.setRegistroCbj(getRegistroCbj());</span>
+<span class="nc" id="L94">		filiado.setTelefone1(getTelefone1());</span>
+<span class="nc" id="L95">		filiado.setTelefone2(getTelefone2());</span>
+<span class="nc" id="L96">		filiado.setObservacoes(getObservacoes());</span>
+<span class="nc" id="L97">		filiado.getRg().setNumero(getNumero());</span>
+<span class="nc" id="L98">		filiado.getRg().setOrgaoExpedidor(getOrgaoExpedidor());</span>
+<span class="nc" id="L99">		filiado.setEndereco(enderecoForm.getEndereco());</span>
+<span class="nc" id="L100">		return filiado;</span>
+	}
+
+	/**
+	 * Classe interna responsável por detectar os cliques no botão
+	 * &quot;Adicionar Faixa&quot;.
+	 * 
+	 * @author Aécio
+	 */
+<span class="nc" id="L109">	class AdicionarFaixaActionHandler implements ActionListener {</span>
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L112">			filiado.getFaixas().add(new Faixa(getCorFaixa(), getDataEntrega()));</span>
+<span class="nc" id="L113">			setFaixasList(filiado.getFaixas());</span>
+<span class="nc" id="L114">		}</span>
+	}
+
+	/* Métodos de acesso à GUI */
+	
+	public String getNome() {
+<span class="nc" id="L120">		return filiadoPanel.getNome().getText();</span>
+	}
+
+	public void setNome(String nome) {
+<span class="nc" id="L124">		filiadoPanel.getNome().setText(nome);</span>
+<span class="nc" id="L125">	}</span>
+
+	public String getCpf() {
+<span class="nc" id="L128">		return filiadoPanel.getCpf().getText();</span>
+	}
+
+	public void setCpf(String cpf) {
+<span class="nc" id="L132">		filiadoPanel.getCpf().setText(cpf);</span>
+<span class="nc" id="L133">	}</span>
+
+	public String getNumero() {
+<span class="nc" id="L136">		return filiadoPanel.getRg().getText();</span>
+	}
+
+	public void setNumero(String numero) {
+<span class="nc" id="L140">		filiadoPanel.getRg().setText(numero);</span>
+<span class="nc" id="L141">	}</span>
+
+	public String getOrgaoExpedidor() {
+<span class="nc" id="L144">		return filiadoPanel.getOrgaoExpedidor().getText();</span>
+	}
+
+	public void setOrgaoExpedidor(String orgaoExpedidor) {
+<span class="nc" id="L148">		filiadoPanel.getOrgaoExpedidor().setText(orgaoExpedidor);</span>
+<span class="nc" id="L149">	}</span>
+
+	public String getObservacoes() {
+<span class="nc" id="L152">		return filiadoPanel.getObservacoes().getText();</span>
+	}
+
+	public void setObservacoes(String observacoes) {
+<span class="nc" id="L156">		filiadoPanel.getObservacoes().setText(observacoes);</span>
+<span class="nc" id="L157">	}</span>
+
+	public String getRegistroCbj() {
+<span class="nc" id="L160">		return filiadoPanel.getRegistroCbj().getText();</span>
+	}
+
+	public void setRegistroCbj(String registroCbj) {
+<span class="nc" id="L164">		filiadoPanel.getRegistroCbj().setText(registroCbj);</span>
+<span class="nc" id="L165">	}</span>
+
+	public String getTelefone1() {
+<span class="nc" id="L168">		return filiadoPanel.getTelefone1().getText();</span>
+	}
+
+	public void setTelefone1(String telefone1) {
+<span class="nc" id="L172">		filiadoPanel.getTelefone1().setText(telefone1);</span>
+<span class="nc" id="L173">	}</span>
+
+	public String getTelefone2() {
+<span class="nc" id="L176">		return filiadoPanel.getTelefone2().getText();</span>
+	}
+
+	public void setTelefone2(String telefone2) {
+<span class="nc" id="L180">		filiadoPanel.getTelefone2().setText(telefone2);</span>
+<span class="nc" id="L181">	}</span>
+
+	public String getEmail() {
+<span class="nc" id="L184">		return filiadoPanel.getEmail().getText();</span>
+	}
+
+	public void setEmail(String email) {
+<span class="nc" id="L188">		filiadoPanel.getEmail().setText(email);</span>
+<span class="nc" id="L189">	}</span>
+
+	private CorFaixa getCorFaixa() {
+<span class="nc" id="L192">		return (CorFaixa) filiadoPanel.getCorFaixa().getSelectedItem();</span>
+	}
+
+	private void setCorFaixaItens(List&lt;CorFaixa&gt; cores) {
+<span class="nc bnc" id="L196" title="All 2 branches missed.">		for (CorFaixa cor : cores) {</span>
+<span class="nc" id="L197">			filiadoPanel.getCorFaixa().addItem(cor);</span>
+<span class="nc" id="L198">		}</span>
+<span class="nc" id="L199">	}</span>
+
+	private Date getDataEntrega() {
+<span class="nc" id="L202">		return filiadoPanel.getDataEntregaDataChooser().getDate();</span>
+	}
+
+	public void setFaixasList(List&lt;Faixa&gt; faixasList) {
+<span class="nc" id="L206">		Object[][] data = new Object[faixasList.size()][2];</span>
+<span class="nc bnc" id="L207" title="All 2 branches missed.">		for (int i = 0; i &lt; faixasList.size(); i++) {</span>
+<span class="nc" id="L208">			data[i][0] = faixasList.get(i).getCor();</span>
+<span class="nc" id="L209">			data[i][1] = dataFormater</span>
+<span class="nc" id="L210">					.format(faixasList.get(i).getDataEntrega());</span>
+		}
+<span class="nc" id="L212">		DefaultTableModel faixasModel = (DefaultTableModel) filiadoPanel</span>
+<span class="nc" id="L213">				.getFaixasTable().getModel();</span>
+<span class="nc" id="L214">		faixasModel.setDataVector(data, new String[] { &quot;Faixa&quot;,</span>
+				&quot;Data de Entrega&quot; });
+<span class="nc" id="L216">	}</span>
+
+	public Date getDataNascimento() {
+<span class="nc" id="L219">		return filiadoPanel.getDataNascimentoDataChooser().getDate();</span>
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+<span class="nc" id="L223">		filiadoPanel.getDataNascimentoDataChooser().setDate(dataNascimento);</span>
+<span class="nc" id="L224">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

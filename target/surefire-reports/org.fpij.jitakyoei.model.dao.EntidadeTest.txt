@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------------
+Test set: org.fpij.jitakyoei.model.dao.EntidadeTest
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in org.fpij.jitakyoei.model.dao.EntidadeTest
+org.fpij.jitakyoei.model.dao.EntidadeTest.testSalvarEntidadeComDadosValidos  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.clearDatabase(EntidadeTest.java:39)
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.testSalvarEntidadeComDadosValidos(EntidadeTest.java:45)
+
+org.fpij.jitakyoei.model.dao.EntidadeTest.testBuscarEntidadePorNome  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.clearDatabase(EntidadeTest.java:39)
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.testBuscarEntidadePorNome(EntidadeTest.java:148)
+
+org.fpij.jitakyoei.model.dao.EntidadeTest.testAtualizarEntidade  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.clearDatabase(EntidadeTest.java:39)
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.testAtualizarEntidade(EntidadeTest.java:81)
+
+org.fpij.jitakyoei.model.dao.EntidadeTest.testBuscarEntidadeInexistente  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.clearDatabase(EntidadeTest.java:39)
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.testBuscarEntidadeInexistente(EntidadeTest.java:162)
+
+org.fpij.jitakyoei.model.dao.EntidadeTest.testAtualizarProcurarEntidadePorNome  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.clearDatabase(EntidadeTest.java:39)
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.testAtualizarProcurarEntidadePorNome(EntidadeTest.java:110)
+
+org.fpij.jitakyoei.model.dao.EntidadeTest.testDeletarEntidade  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.clearDatabase(EntidadeTest.java:39)
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.testDeletarEntidade(EntidadeTest.java:173)
+
+org.fpij.jitakyoei.model.dao.EntidadeTest  Time elapsed: 0 s  <<< ERROR!
+com.db4o.ext.DatabaseClosedException
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.clearDatabase(EntidadeTest.java:39)
+	at org.fpij.jitakyoei.model.dao.EntidadeTest.closeDatabase(EntidadeTest.java:220)
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProfessorBOImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.business</a> &gt; <span class="el_source">ProfessorBOImpl.java</span></div><h1>ProfessorBOImpl.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.business;
+
+import java.util.List;
+
+import org.fpij.jitakyoei.model.beans.Professor;
+import org.fpij.jitakyoei.model.dao.DAO;
+import org.fpij.jitakyoei.model.dao.DAOImpl;
+import org.fpij.jitakyoei.util.FiliadoID;
+import org.fpij.jitakyoei.view.AppView;
+
+public class ProfessorBOImpl implements ProfessorBO {
+	
+	private AppView view;
+<span class="fc" id="L14">	private static DAO&lt;Professor&gt; dao = new DAOImpl&lt;Professor&gt;(Professor.class);</span>
+
+<span class="fc" id="L16">	public ProfessorBOImpl(AppView view) {</span>
+<span class="fc" id="L17">		this.view = view;</span>
+<span class="fc" id="L18">	}</span>
+
+	private void fireModelChangeEvent(Professor professor) {
+<span class="nc" id="L21">		view.handleModelChange(professor);</span>
+<span class="nc" id="L22">	}</span>
+
+	@Override
+	public void createProfessor(Professor professor) throws Exception {
+		try {
+<span class="nc" id="L27">			professor.getFiliado().setId(FiliadoID.getNextID());</span>
+<span class="nc" id="L28">			dao.save(professor);</span>
+<span class="nc" id="L29">			fireModelChangeEvent(professor);</span>
+<span class="nc" id="L30">		} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L31">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao cadastrar o professor!&quot;</span>
+				+ &quot; Verifique se todos os dados foram preenchidos corretamente.&quot;);
+<span class="nc" id="L33">		} catch (Exception e) {</span>
+<span class="nc" id="L34">			e.printStackTrace();</span>
+<span class="nc" id="L35">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao salvar o professor.&quot;);</span>
+<span class="nc" id="L36">		}</span>
+<span class="nc" id="L37">	}</span>
+	
+	@Override
+	public void updateProfessor(Professor professor) throws Exception {
+		try {
+<span class="nc" id="L42">			dao.save(professor);</span>
+<span class="nc" id="L43">			fireModelChangeEvent(professor);</span>
+<span class="nc" id="L44">		} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L45">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao atualizar os dados do professor!&quot;</span>
+				+ &quot; Verifique se todos os dados foram preenchidos corretamente.&quot;);
+<span class="fc" id="L47">		} catch (Exception e) {</span>
+<span class="fc" id="L48">			e.printStackTrace();</span>
+<span class="fc" id="L49">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao atualizar o professor.&quot;);</span>
+<span class="nc" id="L50">		}</span>
+<span class="nc" id="L51">	}</span>
+
+	@Override
+	public List&lt;Professor&gt; listAll() throws Exception {
+		List&lt;Professor&gt; result;
+		try {
+<span class="nc" id="L57">			result = dao.list();</span>
+<span class="nc" id="L58">		} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L59">			throw new IllegalArgumentException(&quot;Ocorreu um erro ao listar de professores.&quot;</span>
+				+ &quot; Verifique se todos os dados foram preenchidos corretamente!&quot;);
+<span class="nc" id="L61">		} catch (Exception e) {</span>
+<span class="nc" id="L62">			e.printStackTrace();</span>
+<span class="nc" id="L63">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao listar professores.&quot;);</span>
+<span class="nc" id="L64">		}</span>
+<span class="nc" id="L65">		return result;</span>
+	}
+
+	@Override
+	public List&lt;Professor&gt; searchProfessor(Professor professor)
+			throws Exception {
+		List&lt;Professor&gt; result;
+		try {
+<span class="nc" id="L73">			result = dao.search(professor);</span>
+<span class="nc" id="L74">		} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L75">			throw new IllegalArgumentException(&quot;Ocorreu um erro ao buscar os professores.&quot;</span>
+				+ &quot; Verifique se todos os dados foram preenchidos corretamente!&quot;);
+<span class="nc" id="L77">		} catch (Exception e) {</span>
+<span class="nc" id="L78">			e.printStackTrace();</span>
+<span class="nc" id="L79">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao buscar os professores.&quot;);</span>
+<span class="nc" id="L80">		}</span>
+<span class="nc" id="L81">		return result;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
