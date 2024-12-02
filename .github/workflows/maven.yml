@@ -75,13 +75,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Extract Coverage from JaCoCo Report
-        id: get_coverage
+      - name: Extract coverage from JaCoCo HTML report
         run: |
-          # Extrair a porcentagem de cobertura do arquivo HTML do JaCoCo
           COVERAGE=$(grep -oP '(?<=<td class="ctr2">)[0-9]+(?=%</td>)' target/site/jacoco/index.html)
-          
-          # Verificar se a variável COVERAGE contém um valor válido antes de gravá-la no ambiente
+
           if [[ -n "$COVERAGE" ]]; then
             echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
           else
@@ -105,15 +102,14 @@ jobs:
 
       - name: Update README.md with Test and Coverage Results
         run: |
-          echo "## Test Results" > README.md
+          echo "## Testes Resultados" > README.md
           echo "Total Tests Run: $TOTAL_TESTS" >> README.md
-          echo "Failures: $FAILURE_COUNT" >> README.md
-          echo "Errors: $ERROR_COUNT" >> README.md
-          echo "See the full test reports in target/surefire-reports/" >> README.md
+          echo "Falhas: $FAILURE_COUNT" >> README.md
+          echo "Erros: $ERROR_COUNT" >> README.md
+          echo "Veja o reporte completo em target/surefire-reports/" >> README.md
           
-          echo "## JaCoCo Coverage" >> README.md
-          echo "Code coverage: $COVERAGE%" >> README.md
-          echo "See the full JaCoCo report in target/site/jacoco/index.html" >> README.md
+          echo "## JaCoCo Cobertura" >> README.md
+          echo "Veja JaCoCo reporte completo em target/site/jacoco/index.html" >> README.md
 
       - name: Commit and push README update
         run: |
