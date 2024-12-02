@@ -34,6 +34,13 @@ jobs:
           cache: maven
       - name: Run Tests
         run: mvn test jacoco:report
+
+  publish-surefire-report:
+    name: Publish Surefire HTML Report
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
       - name: Generate Surefire Report (HTML)
         run: mvn surefire-report:report
       - name: Upload Test Results
