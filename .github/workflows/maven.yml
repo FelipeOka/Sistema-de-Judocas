@@ -62,7 +62,7 @@ jobs:
   update-readme:
     name: Update README with Test Results
     runs-on: ubuntu-latest
-    needs: test
+    needs: publish-surefire-report
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
