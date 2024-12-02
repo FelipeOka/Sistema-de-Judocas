@@ -1,5 +1,5 @@
-## Relatório de Testes
-
-Clique no link abaixo para acessar o relatório de testes interativo:
-
-[Relatório de Testes](target/site/surefire-report.html)
+## Test Results
+Total Tests Run: 64
+Failures: 13
+Errors: 31
+See the full test reports in target/surefire-reports/
