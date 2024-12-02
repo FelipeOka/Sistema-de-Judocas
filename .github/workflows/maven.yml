@@ -35,11 +35,8 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
           cache: maven
-      - name: Run Test Unit
-        run: mvn test -Dtest=org.fpij.jitakyoei.model.unit.**
-      - name: Run Test UCS
-        run: mvn test -Dtest=org.fpij.jitakyoei.model.dao.**
-
+      - name: Run Tests
+        run: mvn test 
 
   surefire-report:
     name: Generate Surefire Report
