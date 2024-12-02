@@ -18,26 +18,26 @@ public class ProfessorEntidadeBOImpl implements ProfessorEntidadeBO {
 <span class="fc" id="L18">	}</span>
 
 	private void fireModelChangeEvent(List&lt;ProfessorEntidade&gt; relacionamentos) {
-<span class="nc" id="L21">		view.handleModelChange(relacionamentos);</span>
-<span class="nc" id="L22">	}</span>
+<span class="fc" id="L21">		view.handleModelChange(relacionamentos);</span>
+<span class="fc" id="L22">	}</span>
 
 	@Override
 	public void createProfessorEntidade(List&lt;ProfessorEntidade&gt; relacionamentos)
 	throws Exception {
 <span class="fc" id="L27">		System.out.println(&quot;ProfessorEntidadeBOImpl.createProfessorEntidade()&quot;);</span>
 		try {
-<span class="pc bpc" id="L29" title="1 of 2 branches missed.">			for (ProfessorEntidade professorEntidade : relacionamentos) {</span>
-<span class="nc" id="L30">				dao.save(professorEntidade);</span>
-<span class="nc" id="L31">			}</span>
-<span class="nc" id="L32">			fireModelChangeEvent(relacionamentos);</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">			for (ProfessorEntidade professorEntidade : relacionamentos) {</span>
+<span class="fc" id="L30">				dao.save(professorEntidade);</span>
+<span class="fc" id="L31">			}</span>
+<span class="fc" id="L32">			fireModelChangeEvent(relacionamentos);</span>
 <span class="nc" id="L33">		} catch (IllegalArgumentException e) {</span>
 <span class="nc" id="L34">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao associar o professor às suas entidades!&quot;</span>
 				+ &quot; Verifique se todos os dados foram preenchidos corretamente.&quot;);
 <span class="fc" id="L36">		} catch (Exception e) {</span>
 <span class="fc" id="L37">			e.printStackTrace();</span>
 <span class="fc" id="L38">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao salvar os relacionamentos.&quot;);</span>
-<span class="nc" id="L39">		}</span>
-<span class="nc" id="L40">	}</span>
+<span class="fc" id="L39">		}</span>
+<span class="fc" id="L40">	}</span>
 
 
 

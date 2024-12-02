@@ -17,24 +17,24 @@ public class AlunoBOImpl implements AlunoBO {
 <span class="fc" id="L17">	}</span>
 
 	private void fireModelChangeEvent(Aluno aluno) {
-<span class="nc" id="L20">		view.handleModelChange(aluno);</span>
-<span class="nc" id="L21">	}</span>
+<span class="fc" id="L20">		view.handleModelChange(aluno);</span>
+<span class="fc" id="L21">	}</span>
 
 	@Override
 	public void createAluno(Aluno aluno) throws Exception {
 <span class="fc" id="L25">		System.out.println(&quot;AlunoBOImpl.createAluno()&quot;);</span>
 		try {
-<span class="nc" id="L27">			aluno.getFiliado().setId(FiliadoID.getNextID());</span>
-<span class="nc" id="L28">			dao.save(aluno);</span>
-<span class="nc" id="L29">			fireModelChangeEvent(aluno);</span>
+<span class="fc" id="L27">			aluno.getFiliado().setId(FiliadoID.getNextID());</span>
+<span class="fc" id="L28">			dao.save(aluno);</span>
+<span class="fc" id="L29">			fireModelChangeEvent(aluno);</span>
 <span class="nc" id="L30">		} catch (IllegalArgumentException e) {</span>
 <span class="nc" id="L31">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao cadastrar o aluno!&quot;</span>
 				+ &quot; Verifique se todos os dados foram preenchidos corretamente.&quot;);
-<span class="nc" id="L33">		} catch (Exception e) {</span>
-<span class="nc" id="L34">			e.printStackTrace();</span>
-<span class="nc" id="L35">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao salvar o aluno.&quot;);</span>
-<span class="nc" id="L36">		}</span>
-<span class="nc" id="L37">	}</span>
+<span class="fc" id="L33">		} catch (Exception e) {</span>
+<span class="fc" id="L34">			e.printStackTrace();</span>
+<span class="fc" id="L35">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao salvar o aluno.&quot;);</span>
+<span class="fc" id="L36">		}</span>
+<span class="fc" id="L37">	}</span>
 
 	@Override
 	public void updateAluno(Aluno aluno) throws Exception{
@@ -45,9 +45,9 @@ public class AlunoBOImpl implements AlunoBO {
 <span class="nc" id="L45">				old.copyProperties(aluno);</span>
 			}
 <span class="nc" id="L47">			fireModelChangeEvent(old);</span>
-<span class="nc" id="L48">		} catch (IllegalArgumentException e) {</span>
-<span class="nc" id="L49">			e.printStackTrace();</span>
-<span class="nc" id="L50">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao salvar os dados do aluno.&quot;</span>
+<span class="fc" id="L48">		} catch (IllegalArgumentException e) {</span>
+<span class="fc" id="L49">			e.printStackTrace();</span>
+<span class="fc" id="L50">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao salvar os dados do aluno.&quot;</span>
 				+ &quot; Verifique se todos os dados foram preenchidos corretamente!&quot;);
 <span class="fc" id="L52">		} catch (Exception e) {</span>
 <span class="fc" id="L53">			e.printStackTrace();</span>
@@ -61,30 +61,30 @@ public class AlunoBOImpl implements AlunoBO {
 	public List&lt;Aluno&gt; searchAluno(Aluno aluno) throws Exception {
 		List&lt;Aluno&gt; result;
 		try {
-<span class="nc" id="L64">			result = dao.search(aluno);</span>
+<span class="fc" id="L64">			result = dao.search(aluno);</span>
 <span class="nc" id="L65">		} catch (IllegalArgumentException e) {</span>
 <span class="nc" id="L66">			throw new IllegalArgumentException(&quot;Ocorreu um erro ao salvar os dados do aluno.&quot;</span>
 				+ &quot; Verifique se todos os dados foram preenchidos corretamente!&quot;);
 <span class="fc" id="L68">		} catch (Exception e) {</span>
 <span class="fc" id="L69">			e.printStackTrace();</span>
 <span class="fc" id="L70">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao buscar os aluno.&quot;);</span>
-<span class="nc" id="L71">		}</span>
-<span class="nc" id="L72">		return result;</span>
+<span class="fc" id="L71">		}</span>
+<span class="fc" id="L72">		return result;</span>
 	}
 
 	@Override
 	public List&lt;Aluno&gt; listAll() throws Exception {
 		List&lt;Aluno&gt; result;
 		try {
-<span class="nc" id="L79">			result = dao.list();</span>
+<span class="fc" id="L79">			result = dao.list();</span>
 <span class="nc" id="L80">		} catch (IllegalArgumentException e) {</span>
 <span class="nc" id="L81">			throw new IllegalArgumentException(&quot;Ocorreu um erro ao obter a lista de alunos.&quot;</span>
 				+ &quot; Verifique se todos os dados foram preenchidos corretamente!&quot;);
 <span class="fc" id="L83">		} catch (Exception e) {</span>
 <span class="fc" id="L84">			e.printStackTrace();</span>
 <span class="fc" id="L85">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido o obter a lista de alunos.&quot;);</span>
-<span class="nc" id="L86">		}</span>
-<span class="nc" id="L87">		return result;</span>
+<span class="fc" id="L86">		}</span>
+<span class="fc" id="L87">		return result;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

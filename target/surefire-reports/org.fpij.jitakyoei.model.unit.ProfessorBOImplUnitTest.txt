@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: org.fpij.jitakyoei.model.unit.ProfessorBOImplUnitTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.012 s <<< FAILURE! - in org.fpij.jitakyoei.model.unit.ProfessorBOImplUnitTest
+Tests run: 6, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! - in org.fpij.jitakyoei.model.unit.ProfessorBOImplUnitTest
 org.fpij.jitakyoei.model.unit.ProfessorBOImplUnitTest.testCreateProfessor_IllegalArgumentException  Time elapsed: 0 s  <<< ERROR!
 java.lang.Exception: Unexpected exception, expected<java.lang.Exception> but was<java.lang.NoClassDefFoundError>
 	at org.fpij.jitakyoei.model.unit.ProfessorBOImplUnitTest.testCreateProfessor_IllegalArgumentException(ProfessorBOImplUnitTest.java:98)
 
-org.fpij.jitakyoei.model.unit.ProfessorBOImplUnitTest.testUpdateProfessorSucesso  Time elapsed: 0 s  <<< ERROR!
+org.fpij.jitakyoei.model.unit.ProfessorBOImplUnitTest.testUpdateProfessorSucesso  Time elapsed: 0.001 s  <<< ERROR!
 com.db4o.ext.DatabaseClosedException
 	at org.fpij.jitakyoei.model.unit.ProfessorBOImplUnitTest.testUpdateProfessorSucesso(ProfessorBOImplUnitTest.java:50)
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.051" tests="7" errors="7" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.061" tests="7" errors="7" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\Ana Jéssica\AppData\Local\Temp\surefire7114202476629933666\surefirebooter7556059477876707730.jar C:\Users\Ana Jéssica\AppData\Local\Temp\surefire7114202476629933666 2024-12-02T00-36-32_694-jvmRun1 surefire591577854524601588tmp surefire_0553735109923940181tmp"/>
+    <property name="sun.java.command" value="C:\Users\Ana Jéssica\AppData\Local\Temp\surefire1389132749528910370\surefirebooter1617795394827121022.jar C:\Users\Ana Jéssica\AppData\Local\Temp\surefire1389132749528910370 2024-12-02T12-58-18_009-jvmRun1 surefire8345429510722659887tmp surefire_06103341989621667747tmp"/>
     <property name="surefire.test.class.path" value="C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\target\test-classes;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\target\classes;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-annotation-jdk5-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-aspect-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-swing-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-swt-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-client-thinlet-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-container-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-server-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-shared-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\genesis\dist\genesis-shared-annotated-3.2.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\forms.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\db4o-7.4.106.13438-java5.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\jcalendar-1.3.3.jar;C:\Users\Ana Jéssica\OneDrive - FEI\Documents\PROJETOS\Sistema-de-Judocas\lib\TableLayout.jar;C:\Users\Ana Jéssica\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Ana Jéssica\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Ana Jéssica\.m2\repository\jmock\jmock-cglib\1.0.1\jmock-cglib-1.0.1.jar;C:\Users\Ana Jéssica\.m2\repository\jmock\jmock\1.0.1\jmock-1.0.1.jar;C:\Users\Ana Jéssica\.m2\repository\cglib\cglib-full\2.0\cglib-full-2.0.jar;C:\Users\Ana Jéssica\.m2\repository\org\mockito\mockito-scala-specs2_2.13\1.17.37\mockito-scala-specs2_2.13-1.17.37.jar;C:\Users\Ana Jéssica\.m2\repository\org\scala-lang\scala-library\2.13.14\scala-library-2.13.14.jar;C:\Users\Ana Jéssica\.m2\repository\org\mockito\mockito-scala_2.13\1.17.37\mockito-scala_2.13-1.17.37.jar;C:\Users\Ana Jéssica\.m2\repository\org\mockito\mockito-core\4.8.1\mockito-core-4.8.1.jar;C:\Users\Ana Jéssica\.m2\repository\net\bytebuddy\byte-buddy\1.12.16\byte-buddy-1.12.16.jar;C:\Users\Ana Jéssica\.m2\repository\net\bytebuddy\byte-buddy-agent\1.12.16\byte-buddy-agent-1.12.16.jar;C:\Users\Ana Jéssica\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;C:\Users\Ana Jéssica\.m2\repository\org\scalactic\scalactic_2.13\3.2.19\scalactic_2.13-3.2.19.jar;C:\Users\Ana Jéssica\.m2\repository\ru\vyarus\generics-resolver\3.0.3\generics-resolver-3.0.3.jar;C:\Users\Ana Jéssica\.m2\repository\org\scala-lang\scala-reflect\2.13.14\scala-reflect-2.13.14.jar;C:\Users\Ana Jéssica\.m2\repository\org\scala-lang\modules\scala-parallel-collections_2.13\1.0.4\scala-parallel-collections_2.13-1.0.4.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Ana Jéssica"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Ana Jéssica\AppData\Local\Temp\surefire7114202476629933666\surefirebooter7556059477876707730.jar;C:\\Users\\Ana Jéssica\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.7\\org.jacoco.agent-0.8.7-runtime.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Ana Jéssica\AppData\Local\Temp\surefire1389132749528910370\surefirebooter1617795394827121022.jar;C:\\Users\\Ana Jéssica\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.7\\org.jacoco.agent-0.8.7-runtime.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\resources.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\rt.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\sunrsasign.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\jsse.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\jce.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\charsets.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\lib\jfr.jar;C:\Program Files\OpenLogic\jdk-8.0.432.06-hotspot\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testUpdateEntidadeSucesso" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.007">
+  <testcase name="testUpdateEntidadeSucesso" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.014">
     <error message="Desculpe, ocorreu um erro desconhecido ao salvar a entidade." type="java.lang.Exception"><![CDATA[java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao salvar a entidade.
 	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testUpdateEntidadeSucesso(EntidadeBOImplUnitTest.java:94)
 ]]></error>
@@ -107,7 +107,7 @@ Entidade a ser Atualizada
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
 ]]></system-err>
   </testcase>
-  <testcase name="testCreateEntidadeFalha" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.012">
+  <testcase name="testCreateEntidadeFalha" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.006">
     <error message="Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.Exception&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.Exception>
 	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testCreateEntidadeFalha(EntidadeBOImplUnitTest.java:45)
 ]]></error>
@@ -154,7 +154,7 @@ null
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
 ]]></system-err>
   </testcase>
-  <testcase name="testSearchEntidadeFalha" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.006">
+  <testcase name="testSearchEntidadeFalha" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.011">
     <error message="Unexpected exception, expected&lt;java.lang.AssertionError&gt; but was&lt;java.lang.Exception&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<java.lang.AssertionError> but was<java.lang.Exception>
 	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testSearchEntidadeFalha(EntidadeBOImplUnitTest.java:85)
 ]]></error>
@@ -195,7 +195,7 @@ null
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
 ]]></system-err>
   </testcase>
-  <testcase name="testUpdateEntidadeFalha" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.004">
+  <testcase name="testUpdateEntidadeFalha" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.006">
     <error message="Unexpected exception, expected&lt;java.lang.IllegalArgumentException&gt; but was&lt;java.lang.Exception&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<java.lang.IllegalArgumentException> but was<java.lang.Exception>
 	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testUpdateEntidadeFalha(EntidadeBOImplUnitTest.java:110)
 ]]></error>
@@ -241,7 +241,7 @@ Entidade Inexistente
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
 ]]></system-err>
   </testcase>
-  <testcase name="testCreateEntidadeSucesso" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.006">
+  <testcase name="testCreateEntidadeSucesso" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.016">
     <error message="Desculpe, ocorreu um erro desconhecido ao salvar a entidade." type="java.lang.Exception"><![CDATA[java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao salvar a entidade.
 	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testCreateEntidadeSucesso(EntidadeBOImplUnitTest.java:34)
 ]]></error>
@@ -287,7 +287,7 @@ Test Entity
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
 ]]></system-err>
   </testcase>
-  <testcase name="testListAllEntidadeSucesso" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.008">
+  <testcase name="testListAllEntidadeSucesso" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.004">
     <error message="Desculpe, ocorreu um erro desconhecido ao salvar a entidade." type="java.lang.Exception"><![CDATA[java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao salvar a entidade.
 	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testListAllEntidadeSucesso(EntidadeBOImplUnitTest.java:53)
 ]]></error>
@@ -333,7 +333,7 @@ Entidade 1
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
 ]]></system-err>
   </testcase>
-  <testcase name="testSearchEntidadeSucesso" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.007">
+  <testcase name="testSearchEntidadeSucesso" classname="org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest" time="0.004">
     <error message="Desculpe, ocorreu um erro desconhecido ao salvar a entidade." type="java.lang.Exception"><![CDATA[java.lang.Exception: Desculpe, ocorreu um erro desconhecido ao salvar a entidade.
 	at org.fpij.jitakyoei.model.unit.EntidadeBOImplUnitTest.testSearchEntidadeSucesso(EntidadeBOImplUnitTest.java:71)
 ]]></error>
