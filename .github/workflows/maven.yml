@@ -64,7 +64,7 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: './target/site/jacoco/jacoco.xml'  
+          files: './target/jacoco.xml'  
           fail_ci_if_error: true
 
   update-readme:
@@ -78,13 +78,14 @@ jobs:
       - name: Get Test Results
         id: get_test_results
         run: |
-          FAILURE_COUNT=$(grep -c 'FAILURE' target/surefire-reports/*.txt)
-          ERROR_COUNT=$(grep -c 'ERROR' target/surefire-reports/*.txt)
-          TOTAL_TESTS=$(grep -o 'Tests run: [0-9]*' target/surefire-reports/*.txt | awk '{sum += $3} END {print sum}')
+          FAILURE_COUNT=$(find target/surefire-reports/ -type f -name "*.txt" -exec grep -c 'FAILURE' {} \; | awk '{s+=$1} END {print s}')
+          ERROR_COUNT=$(find target/surefire-reports/ -type f -name "*.txt" -exec grep -c 'ERROR' {} \; | awk '{s+=$1} END {print s}')
+          TOTAL_TESTS=$(find target/surefire-reports/ -type f -name "*.txt" -exec grep -o 'Tests run: [0-9]*' {} \; | awk '{sum += $3} END {print sum}')
+          
           echo "FAILURE_COUNT=$FAILURE_COUNT" >> $GITHUB_ENV
           echo "ERROR_COUNT=$ERROR_COUNT" >> $GITHUB_ENV
           echo "TOTAL_TESTS=$TOTAL_TESTS" >> $GITHUB_ENV
-
+      
       - name: Update README.md
         run: |
           echo "## Test Results" > README.md
