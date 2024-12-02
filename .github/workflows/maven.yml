@@ -80,7 +80,17 @@ jobs:
         run: |
           # Extrair a porcentagem de cobertura do arquivo HTML do JaCoCo
           COVERAGE=$(grep -oP '(?<=<td class="ctr2">)[0-9]+(?=%</td>)' target/site/jacoco/index.html)
-          echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
+          
+          # Verificar se a variável COVERAGE contém um valor válido antes de gravá-la no ambiente
+          if [[ -n "$COVERAGE" ]]; then
+            echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
+          else
+            echo "Erro: Não foi possível extrair a porcentagem de cobertura" >> $GITHUB_ENV
+          fi
+
+      - name: Show extracted coverage
+        run: |
+          echo "A porcentagem de cobertura extraída é $COVERAGE%"
 
       - name: Get Test Results
         id: get_test_results
