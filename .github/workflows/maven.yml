@@ -16,6 +16,9 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
           cache: maven
+      - name: Create target directory manually
+        run: |
+          mkdir -p target
       - name: Build with Maven
         run: mvn clean compile  
 
