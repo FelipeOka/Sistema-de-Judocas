@@ -75,20 +75,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Extract coverage from JaCoCo HTML report
-        run: |
-          COVERAGE=$(grep -oP '(?<=<td class="ctr2">)[0-9]+(?=%</td>)' target/site/jacoco/index.html)
-
-          if [[ -n "$COVERAGE" ]]; then
-            echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
-          else
-            echo "Erro: Não foi possível extrair a porcentagem de cobertura" >> $GITHUB_ENV
-          fi
-
-      - name: Show extracted coverage
-        run: |
-          echo "A porcentagem de cobertura extraída é $COVERAGE%"
-
       - name: Get Test Results
         id: get_test_results
         run: |
