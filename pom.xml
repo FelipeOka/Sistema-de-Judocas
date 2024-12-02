@@ -177,12 +177,16 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version>
+                <version>0.8.7</version> <!-- Use a versão adequada -->
                 <executions>
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
-                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>report</goal> 
                         </goals>
                     </execution>
                 </executions>
