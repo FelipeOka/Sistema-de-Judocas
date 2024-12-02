@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProfessorBuscarView.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view</a> &gt; <span class="el_source">ProfessorBuscarView.java</span></div><h1>ProfessorBuscarView.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
+import org.fpij.jitakyoei.facade.AppFacade;
+import org.fpij.jitakyoei.model.beans.Filiado;
+import org.fpij.jitakyoei.model.beans.Professor;
+import org.fpij.jitakyoei.view.forms.CamposBuscaForm;
+import org.fpij.jitakyoei.view.gui.ProfessorBuscarPanel;
+
+public class ProfessorBuscarView implements ViewComponent{
+
+	private ProfessorBuscarPanel gui;
+	private AppFacade facade;
+	private CamposBuscaForm campoBusca;
+	private Professor selectedProfessor;
+	private List&lt;Professor&gt; professorList;
+	public static final int BUSCA_SOMENTE = 0;
+	public static final int ALTERACAO = 1;
+	
+<span class="nc" id="L29">	public ProfessorBuscarView() {</span>
+<span class="nc" id="L30">		gui = new ProfessorBuscarPanel();</span>
+<span class="nc" id="L31">		gui.getBuscar().addActionListener(new BuscarActionHandler());</span>
+<span class="nc" id="L32">		campoBusca = new CamposBuscaForm(gui.getBuscaCamposPanel());</span>
+<span class="nc" id="L33">	}</span>
+	
+	public ProfessorBuscarView(int MODO) {
+<span class="nc" id="L36">		this();</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">		if(MODO == ALTERACAO){</span>
+<span class="nc" id="L38">			gui.getProfessores().addMouseListener(new TableProfessoresMouseClickedHandler());</span>
+		}
+<span class="nc" id="L40">	}</span>
+	
+	private void buscarProfessores(String nome, Long registroFpij) {
+<span class="nc" id="L43">		Filiado filiado = new Filiado();</span>
+<span class="nc" id="L44">		filiado.setNome(nome);</span>
+<span class="nc" id="L45">		filiado.setId(registroFpij);</span>
+<span class="nc" id="L46">		Professor professor = new Professor();</span>
+<span class="nc" id="L47">		professor.setFiliado(filiado);</span>
+		try {
+<span class="nc" id="L49">			professorList = facade.searchProfessor(professor);</span>
+<span class="nc" id="L50">			setProfessorList(professorList);</span>
+<span class="nc" id="L51">		} catch (Exception e) {</span>
+<span class="nc" id="L52">			e.printStackTrace();</span>
+<span class="nc" id="L53">		}</span>
+<span class="nc" id="L54">	}</span>
+	
+	@Override
+	public JPanel getGui() {
+<span class="nc" id="L58">		return gui;</span>
+	}
+	
+	@Override
+	public void registerFacade(AppFacade fac) {
+<span class="nc" id="L63">		this.facade = fac;</span>
+<span class="nc" id="L64">		buscarProfessores(null, null);</span>
+<span class="nc" id="L65">	}</span>
+	
+<span class="nc" id="L67">	public class BuscarActionHandler implements ActionListener {</span>
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L70">			buscarProfessores(getNome(), getRegistroFpij());</span>
+<span class="nc" id="L71">		}</span>
+	}
+	
+<span class="nc" id="L74">	public class TableProfessoresMouseClickedHandler implements MouseListener {</span>
+		@Override
+		public void mouseClicked(MouseEvent arg0) {
+<span class="nc" id="L77">			selectedProfessor = professorList.get(gui.getProfessores().getSelectedRow());</span>
+<span class="nc" id="L78">			gui.getParent().getParent().getParent().getParent().setVisible(false);</span>
+<span class="nc" id="L79">		}</span>
+		@Override
+<span class="nc" id="L81">		public void mouseEntered(MouseEvent arg0) {}</span>
+		@Override
+<span class="nc" id="L83">		public void mouseExited(MouseEvent arg0) {}</span>
+		@Override
+<span class="nc" id="L85">		public void mousePressed(MouseEvent arg0) {}</span>
+		@Override
+<span class="nc" id="L87">		public void mouseReleased(MouseEvent arg0) {}</span>
+	}
+	
+	/* Métodos de acesso e modificação da GUI */
+	
+	public Professor getSelectedProfessor() {
+<span class="nc" id="L93">		return selectedProfessor;</span>
+	}
+	
+	public Long getRegistroFpij() {
+<span class="nc" id="L97">		String registro = campoBusca.getRegistroFpij().trim();</span>
+<span class="nc bnc" id="L98" title="All 4 branches missed.">		if(registro==null || registro.equals(&quot;&quot;)){</span>
+		}
+		else{
+			try{
+<span class="nc" id="L102">				return Long.parseLong(campoBusca.getRegistroFpij().trim());</span>
+<span class="nc" id="L103">			}catch (Exception e) {</span>
+<span class="nc" id="L104">				JOptionPane.showMessageDialog(gui, &quot;Digite um número de registro válido!&quot;);</span>
+			}
+		}
+<span class="nc" id="L107">		return null;</span>
+	}
+	
+	public void setRegistroFpij(String registroFpij) {
+<span class="nc" id="L111">		campoBusca.setRegistroFpij(registroFpij);</span>
+<span class="nc" id="L112">	}</span>
+	
+	public String getNome() {
+<span class="nc" id="L115">		return campoBusca.getNome();</span>
+	}
+	
+	public void setNome(String nome) {
+<span class="nc" id="L119">		campoBusca.setNome(nome);</span>
+<span class="nc" id="L120">	}</span>
+	
+	public void setProfessorList(List&lt;Professor&gt; professorList) {
+<span class="nc" id="L123">		Object[][] dados = new Object[professorList.size()][4];</span>
+<span class="nc bnc" id="L124" title="All 2 branches missed.">		for (int i = 0; i &lt; professorList.size(); i++) {</span>
+<span class="nc" id="L125">			dados[i][0] = professorList.get(i).getFiliado().getId();</span>
+<span class="nc" id="L126">			dados[i][1] = professorList.get(i).getFiliado().getNome();</span>
+<span class="nc" id="L127">			dados[i][2] = professorList.get(i).getFiliado().getTelefone1();</span>
+<span class="nc" id="L128">			dados[i][3] = professorList.get(i).getFiliado().getTelefone2();</span>
+		}
+<span class="nc" id="L130">		DefaultTableModel tblModel = (DefaultTableModel) gui.getProfessores().getModel();</span>
+<span class="nc" id="L131">		tblModel.setDataVector(dados, new String[]{</span>
+				&quot;Registro FPIJ&quot;, &quot;Nome&quot;, &quot;Telefone 1&quot;, &quot;Telefone 2&quot; });	
+<span class="nc" id="L133">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

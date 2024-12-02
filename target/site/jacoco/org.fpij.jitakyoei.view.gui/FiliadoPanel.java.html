@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FiliadoPanel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view.gui</a> &gt; <span class="el_source">FiliadoPanel.java</span></div><h1>FiliadoPanel.java</h1><pre class="source lang-java linenums">/*
+ * Created by JFormDesigner on Mon Dec 07 20:56:28 GMT-03:00 2009
+ */
+
+package org.fpij.jitakyoei.view.gui;
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
+
+import com.jgoodies.forms.layout.CellConstraints;
+import com.jgoodies.forms.layout.FormLayout;
+import com.toedter.calendar.JDateChooser;
+
+/**
+ * @author wansoul
+ */
+@SuppressWarnings(&quot;serial&quot;)
+public class FiliadoPanel extends JPanel {
+
+<span class="nc" id="L31">	public FiliadoPanel() {</span>
+<span class="nc" id="L32">		initComponents();</span>
+<span class="nc" id="L33">	}</span>
+
+	public EnderecoPanel getEnderecoPanel() {
+<span class="nc" id="L36">		return enderecoPanel;</span>
+	}
+
+	public JTable getFaixasTable() {
+<span class="nc" id="L40">		return faixasTable;</span>
+	}
+
+	public JDateChooser getDataEntregaDataChooser() {
+<span class="nc" id="L44">		return dataEntregaDataChooser;</span>
+	}
+
+	public JDateChooser getDataNascimentoDataChooser() {
+<span class="nc" id="L48">		return dataNascimentoDataChooser;</span>
+	}
+
+	public JTextField getNome() {
+<span class="nc" id="L52">		return nome;</span>
+	}
+
+	public JTextField getRegistroCbj() {
+<span class="nc" id="L56">		return registroCbj;</span>
+	}
+
+	public JTextField getCpf() {
+<span class="nc" id="L60">		return cpf;</span>
+	}
+
+	public JTextField getEmail() {
+<span class="nc" id="L64">		return email;</span>
+	}
+
+	public JTextField getRg() {
+<span class="nc" id="L68">		return rg;</span>
+	}
+
+	public JTextField getOrgaoExpedidor() {
+<span class="nc" id="L72">		return orgaoExpedidor;</span>
+	}
+
+	public JTextField getTelefone1() {
+<span class="nc" id="L76">		return telefone1;</span>
+	}
+
+	public JTextField getTelefone2() {
+<span class="nc" id="L80">		return telefone2;</span>
+	}
+
+	public JComboBox getCorFaixa() {
+<span class="nc" id="L84">		return corFaixa;</span>
+	}
+
+	public JButton getAdicionarFaixa() {
+<span class="nc" id="L88">		return adicionarFaixa;</span>
+	}
+
+	public JTextArea getObservacoes() {
+<span class="nc" id="L92">		return observacoes;</span>
+	}
+	
+	@SuppressWarnings(&quot;unchecked&quot;)
+	private void initComponents() {
+		// JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+<span class="nc" id="L98">		label1 = new JLabel();</span>
+<span class="nc" id="L99">		nome = new JTextField();</span>
+<span class="nc" id="L100">		label5 = new JLabel();</span>
+<span class="nc" id="L101">		registroCbj = new JTextField();</span>
+<span class="nc" id="L102">		label12 = new JLabel();</span>
+<span class="nc" id="L103">		cpf = new JTextField();</span>
+<span class="nc" id="L104">		label6 = new JLabel();</span>
+<span class="nc" id="L105">		email = new JTextField();</span>
+<span class="nc" id="L106">		label2 = new JLabel();</span>
+<span class="nc" id="L107">		dataNascimentoDataChooser = new JDateChooser();</span>
+<span class="nc" id="L108">		label3 = new JLabel();</span>
+<span class="nc" id="L109">		rg = new JTextField();</span>
+<span class="nc" id="L110">		label4 = new JLabel();</span>
+<span class="nc" id="L111">		orgaoExpedidor = new JTextField();</span>
+<span class="nc" id="L112">		label10 = new JLabel();</span>
+<span class="nc" id="L113">		telefone1 = new JTextField();</span>
+<span class="nc" id="L114">		label11 = new JLabel();</span>
+<span class="nc" id="L115">		telefone2 = new JTextField();</span>
+<span class="nc" id="L116">		tabbedPane1 = new JTabbedPane();</span>
+<span class="nc" id="L117">		enderecoPanel = new EnderecoPanel();</span>
+<span class="nc" id="L118">		panel1 = new JPanel();</span>
+<span class="nc" id="L119">		label7 = new JLabel();</span>
+<span class="nc" id="L120">		corFaixa = new JComboBox();</span>
+<span class="nc" id="L121">		label8 = new JLabel();</span>
+<span class="nc" id="L122">		dataEntregaDataChooser = new JDateChooser();</span>
+<span class="nc" id="L123">		adicionarFaixa = new JButton();</span>
+<span class="nc" id="L124">		scrollPane2 = new JScrollPane();</span>
+<span class="nc" id="L125">		faixasTable = new JTable();</span>
+<span class="nc" id="L126">		panel2 = new JPanel();</span>
+<span class="nc" id="L127">		scrollPane1 = new JScrollPane();</span>
+<span class="nc" id="L128">		observacoes = new JTextArea();</span>
+<span class="nc" id="L129">		CellConstraints cc = new CellConstraints();</span>
+
+		//======== this ========
+<span class="nc" id="L132">		setName(&quot;this&quot;);</span>
+<span class="nc" id="L133">		setLayout(new FormLayout(</span>
+			&quot;$lcgap, pref, $lcgap, 109dlu:grow, $lcgap, 65dlu, $lcgap, 29dlu:grow, $lcgap, 46dlu, $lcgap, default&quot;,
+			&quot;5*($lgap, default), $lgap, 107dlu:grow&quot;));
+
+		//---- label1 ----
+<span class="nc" id="L138">		label1.setText(&quot;Nome:&quot;);</span>
+<span class="nc" id="L139">		label1.setName(&quot;label1&quot;);</span>
+<span class="nc" id="L140">		add(label1, cc.xy(2, 2));</span>
+
+		//---- nome ----
+<span class="nc" id="L143">		nome.setName(&quot;nome&quot;);</span>
+<span class="nc" id="L144">		add(nome, cc.xywh(4, 2, 7, 1));</span>
+
+		//---- label5 ----
+<span class="nc" id="L147">		label5.setText(&quot;Registro CBJ:&quot;);</span>
+<span class="nc" id="L148">		label5.setName(&quot;label5&quot;);</span>
+<span class="nc" id="L149">		add(label5, cc.xy(2, 4));</span>
+
+		//---- registroCbj ----
+<span class="nc" id="L152">		registroCbj.setName(&quot;registroCbj&quot;);</span>
+<span class="nc" id="L153">		add(registroCbj, cc.xy(4, 4));</span>
+
+		//---- label12 ----
+<span class="nc" id="L156">		label12.setText(&quot;CPF:&quot;);</span>
+<span class="nc" id="L157">		label12.setName(&quot;label12&quot;);</span>
+<span class="nc" id="L158">		add(label12, cc.xy(6, 4));</span>
+
+		//---- cpf ----
+<span class="nc" id="L161">		cpf.setName(&quot;cpf&quot;);</span>
+<span class="nc" id="L162">		add(cpf, cc.xywh(8, 4, 3, 1));</span>
+
+		//---- label6 ----
+<span class="nc" id="L165">		label6.setText(&quot;E-mail&quot;);</span>
+<span class="nc" id="L166">		label6.setName(&quot;label6&quot;);</span>
+<span class="nc" id="L167">		add(label6, cc.xy(2, 6));</span>
+
+		//---- email ----
+<span class="nc" id="L170">		email.setName(&quot;email&quot;);</span>
+<span class="nc" id="L171">		add(email, cc.xy(4, 6));</span>
+
+		//---- label2 ----
+<span class="nc" id="L174">		label2.setText(&quot;Data de Nascimento:&quot;);</span>
+<span class="nc" id="L175">		label2.setName(&quot;label2&quot;);</span>
+<span class="nc" id="L176">		add(label2, cc.xy(6, 6));</span>
+
+		//---- dataNascimentoDataChooser ----
+<span class="nc" id="L179">		dataNascimentoDataChooser.setName(&quot;dataNascimentoDataChooser&quot;);</span>
+<span class="nc" id="L180">		add(dataNascimentoDataChooser, cc.xywh(8, 6, 3, 1));</span>
+
+		//---- label3 ----
+<span class="nc" id="L183">		label3.setText(&quot;RG:&quot;);</span>
+<span class="nc" id="L184">		label3.setName(&quot;label3&quot;);</span>
+<span class="nc" id="L185">		add(label3, cc.xy(2, 8));</span>
+
+		//---- rg ----
+<span class="nc" id="L188">		rg.setName(&quot;rg&quot;);</span>
+<span class="nc" id="L189">		add(rg, cc.xy(4, 8));</span>
+
+		//---- label4 ----
+<span class="nc" id="L192">		label4.setText(&quot;\u00d3rg\u00e3o Expedidor:&quot;);</span>
+<span class="nc" id="L193">		label4.setName(&quot;label4&quot;);</span>
+<span class="nc" id="L194">		add(label4, cc.xy(6, 8));</span>
+
+		//---- orgaoExpedidor ----
+<span class="nc" id="L197">		orgaoExpedidor.setName(&quot;orgaoExpedidor&quot;);</span>
+<span class="nc" id="L198">		add(orgaoExpedidor, cc.xywh(8, 8, 3, 1));</span>
+
+		//---- label10 ----
+<span class="nc" id="L201">		label10.setText(&quot;Fone 1:&quot;);</span>
+<span class="nc" id="L202">		label10.setName(&quot;label10&quot;);</span>
+<span class="nc" id="L203">		add(label10, cc.xy(2, 10));</span>
+
+		//---- telefone1 ----
+<span class="nc" id="L206">		telefone1.setName(&quot;telefone1&quot;);</span>
+<span class="nc" id="L207">		add(telefone1, cc.xy(4, 10));</span>
+
+		//---- label11 ----
+<span class="nc" id="L210">		label11.setText(&quot;Fone 2:&quot;);</span>
+<span class="nc" id="L211">		label11.setName(&quot;label11&quot;);</span>
+<span class="nc" id="L212">		add(label11, cc.xy(6, 10));</span>
+
+		//---- telefone2 ----
+<span class="nc" id="L215">		telefone2.setName(&quot;telefone2&quot;);</span>
+<span class="nc" id="L216">		add(telefone2, cc.xywh(8, 10, 3, 1));</span>
+
+		//======== tabbedPane1 ========
+		{
+<span class="nc" id="L220">			tabbedPane1.setName(&quot;tabbedPane1&quot;);</span>
+
+			//---- enderecoPanel ----
+<span class="nc" id="L223">			enderecoPanel.setBorder(new TitledBorder(null, &quot;&quot;, TitledBorder.LEADING, TitledBorder.TOP));</span>
+<span class="nc" id="L224">			enderecoPanel.setName(&quot;enderecoPanel&quot;);</span>
+<span class="nc" id="L225">			tabbedPane1.addTab(&quot;Endere\u00e7o&quot;, enderecoPanel);</span>
+
+
+			//======== panel1 ========
+			{
+<span class="nc" id="L230">				panel1.setBorder(new TitledBorder(&quot;&quot;));</span>
+<span class="nc" id="L231">				panel1.setName(&quot;panel1&quot;);</span>
+<span class="nc" id="L232">				panel1.setLayout(new FormLayout(</span>
+					&quot;39dlu, $lcgap, 65dlu:grow, $lcgap, 53dlu, $lcgap, 52dlu:grow, $lcgap, 52dlu&quot;,
+					&quot;default, $lgap, fill:48dlu:grow&quot;));
+
+				//---- label7 ----
+<span class="nc" id="L237">				label7.setText(&quot;Cor:&quot;);</span>
+<span class="nc" id="L238">				label7.setName(&quot;label7&quot;);</span>
+<span class="nc" id="L239">				panel1.add(label7, cc.xy(1, 1));</span>
+
+				//---- corFaixa ----
+<span class="nc" id="L242">				corFaixa.setName(&quot;corFaixa&quot;);</span>
+<span class="nc" id="L243">				panel1.add(corFaixa, cc.xy(3, 1));</span>
+
+				//---- label8 ----
+<span class="nc" id="L246">				label8.setText(&quot;Data de Entrega:&quot;);</span>
+<span class="nc" id="L247">				label8.setName(&quot;label8&quot;);</span>
+<span class="nc" id="L248">				panel1.add(label8, cc.xy(5, 1));</span>
+
+				//---- dataEntregaDataChooser ----
+<span class="nc" id="L251">				dataEntregaDataChooser.setName(&quot;dataEntregaDataChooser&quot;);</span>
+<span class="nc" id="L252">				panel1.add(dataEntregaDataChooser, cc.xy(7, 1));</span>
+
+				//---- adicionarFaixa ----
+<span class="nc" id="L255">				adicionarFaixa.setText(&quot;Adicionar&quot;);</span>
+<span class="nc" id="L256">				adicionarFaixa.setName(&quot;adicionarFaixa&quot;);</span>
+<span class="nc" id="L257">				panel1.add(adicionarFaixa, cc.xy(9, 1));</span>
+
+				//======== scrollPane2 ========
+				{
+<span class="nc" id="L261">					scrollPane2.setName(&quot;scrollPane2&quot;);</span>
+
+					//---- faixasTable ----
+<span class="nc" id="L264">					faixasTable.setModel(new DefaultTableModel(</span>
+						new Object[][] {
+						},
+						new String[] {
+							&quot;Faixa&quot;, &quot;Data de Entrega&quot;
+						}
+<span class="nc" id="L270">					) {</span>
+<span class="nc" id="L271">						Class[] columnTypes = new Class[] {</span>
+							Object.class, Object.class
+						};
+<span class="nc" id="L274">						boolean[] columnEditable = new boolean[] {</span>
+							false, true
+						};
+						@Override
+						public Class&lt;?&gt; getColumnClass(int columnIndex) {
+<span class="nc" id="L279">							return columnTypes[columnIndex];</span>
+						}
+						@Override
+						public boolean isCellEditable(int rowIndex, int columnIndex) {
+<span class="nc" id="L283">							return columnEditable[columnIndex];</span>
+						}
+					});
+					{
+<span class="nc" id="L287">						TableColumnModel cm = faixasTable.getColumnModel();</span>
+<span class="nc" id="L288">						cm.getColumn(0).setResizable(false);</span>
+					}
+<span class="nc" id="L290">					faixasTable.setName(&quot;faixasTable&quot;);</span>
+<span class="nc" id="L291">					scrollPane2.setViewportView(faixasTable);</span>
+				}
+<span class="nc" id="L293">				panel1.add(scrollPane2, cc.xywh(1, 3, 9, 1));</span>
+			}
+<span class="nc" id="L295">			tabbedPane1.addTab(&quot;Faixas&quot;, panel1);</span>
+
+
+			//======== panel2 ========
+			{
+<span class="nc" id="L300">				panel2.setName(&quot;panel2&quot;);</span>
+<span class="nc" id="L301">				panel2.setLayout(new BorderLayout());</span>
+
+				//======== scrollPane1 ========
+				{
+<span class="nc" id="L305">					scrollPane1.setName(&quot;scrollPane1&quot;);</span>
+
+					//---- observacoes ----
+<span class="nc" id="L308">					observacoes.setLineWrap(true);</span>
+<span class="nc" id="L309">					observacoes.setName(&quot;observacoes&quot;);</span>
+<span class="nc" id="L310">					scrollPane1.setViewportView(observacoes);</span>
+				}
+<span class="nc" id="L312">				panel2.add(scrollPane1, BorderLayout.CENTER);</span>
+			}
+<span class="nc" id="L314">			tabbedPane1.addTab(&quot;observa\u00e7\u00f5es&quot;, panel2);</span>
+
+		}
+<span class="nc" id="L317">		add(tabbedPane1, cc.xywh(2, 12, 11, 1, CellConstraints.DEFAULT, CellConstraints.FILL));</span>
+		// JFormDesigner - End of component initialization  //GEN-END:initComponents
+<span class="nc" id="L319">	}</span>
+
+	// JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+	private JLabel label1;
+	private JTextField nome;
+	private JLabel label5;
+	private JTextField registroCbj;
+	private JLabel label12;
+	private JTextField cpf;
+	private JLabel label6;
+	private JTextField email;
+	private JLabel label2;
+	private JDateChooser dataNascimentoDataChooser;
+	private JLabel label3;
+	private JTextField rg;
+	private JLabel label4;
+	private JTextField orgaoExpedidor;
+	private JLabel label10;
+	private JTextField telefone1;
+	private JLabel label11;
+	private JTextField telefone2;
+	private JTabbedPane tabbedPane1;
+	private EnderecoPanel enderecoPanel;
+	private JPanel panel1;
+	private JLabel label7;
+	private JComboBox corFaixa;
+	private JLabel label8;
+	private JDateChooser dataEntregaDataChooser;
+	private JButton adicionarFaixa;
+	private JScrollPane scrollPane2;
+	private JTable faixasTable;
+	private JPanel panel2;
+	private JScrollPane scrollPane1;
+	private JTextArea observacoes;
+	// JFormDesigner - End of variables declaration  //GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

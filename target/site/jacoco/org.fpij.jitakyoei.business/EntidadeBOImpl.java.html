@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EntidadeBOImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.business</a> &gt; <span class="el_source">EntidadeBOImpl.java</span></div><h1>EntidadeBOImpl.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.business;
+
+import java.util.List;
+
+import org.fpij.jitakyoei.model.beans.Entidade;
+import org.fpij.jitakyoei.model.dao.DAO;
+import org.fpij.jitakyoei.model.dao.DAOImpl;
+import org.fpij.jitakyoei.view.AppView;
+
+public class EntidadeBOImpl implements EntidadeBO {
+	
+	private AppView view;
+<span class="fc" id="L13">	private static DAO&lt;Entidade&gt; dao = new DAOImpl&lt;Entidade&gt;(Entidade.class);</span>
+
+<span class="fc" id="L15">	public EntidadeBOImpl(AppView view) {</span>
+<span class="fc" id="L16">		this.view = view;</span>
+<span class="fc" id="L17">	}</span>
+	
+	private void fireModelChangeEvent(Entidade entidade) {
+<span class="nc" id="L20">		view.handleModelChange(entidade);</span>
+<span class="nc" id="L21">	}</span>
+
+	@Override
+	public void createEntidade(Entidade entidade) throws Exception {
+<span class="fc" id="L25">		System.out.println(&quot;EntidadeBOImpl.createEntidade()&quot;);</span>
+		try {
+<span class="nc" id="L27">			dao.save(entidade);</span>
+<span class="nc" id="L28">			fireModelChangeEvent(entidade);</span>
+<span class="nc" id="L29">		} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L30">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao cadastrar a entidade!&quot;</span>
+				+ &quot; Verifique se todos os dados foram preenchidos corretamente.&quot;);
+<span class="fc" id="L32">		} catch (Exception e) {</span>
+<span class="fc" id="L33">			e.printStackTrace();</span>
+<span class="fc" id="L34">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao salvar a entidade.&quot;);</span>
+<span class="nc" id="L35">		}</span>
+<span class="nc" id="L36">	}</span>
+
+	@Override
+	public List&lt;Entidade&gt; listAll() throws Exception {
+		List&lt;Entidade&gt; result;
+		try {
+<span class="nc" id="L42">			result = dao.list();</span>
+<span class="nc" id="L43">		} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L44">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao listar entidades!&quot;</span>
+				+ &quot; Verifique se todos os dados foram preenchidos corretamente.&quot;);
+<span class="nc" id="L46">		} catch (Exception e) {</span>
+<span class="nc" id="L47">			e.printStackTrace();</span>
+<span class="nc" id="L48">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao listar entidades.&quot;);</span>
+<span class="nc" id="L49">		}</span>
+<span class="nc" id="L50">		return result;</span>
+	}
+
+	@Override
+	public List&lt;Entidade&gt; searchEntidade(Entidade entidade) throws Exception {
+		List&lt;Entidade&gt; result;
+		try {
+<span class="nc" id="L57">			result = dao.search(entidade);</span>
+<span class="nc" id="L58">		} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L59">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao buscar entidades!&quot;</span>
+				+ &quot; Verifique se todos os dados foram preenchidos corretamente.&quot;);
+<span class="fc" id="L61">		} catch (Exception e) {</span>
+<span class="fc" id="L62">			e.printStackTrace();</span>
+<span class="fc" id="L63">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao buscar entidades.&quot;);</span>
+<span class="nc" id="L64">		}</span>
+<span class="nc" id="L65">		return result;</span>
+	}
+
+	@Override
+	public void updateEntidade(Entidade entidade) throws Exception {
+		try {
+<span class="nc" id="L71">			dao.save(entidade);</span>
+<span class="nc" id="L72">			fireModelChangeEvent(entidade);</span>
+<span class="nc" id="L73">		} catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L74">			throw new IllegalArgumentException( &quot;Ocorreu um erro ao atualizar a entidade!&quot;</span>
+				+ &quot; Verifique se todos os dados foram preenchidos corretamente.&quot;);
+<span class="fc" id="L76">		} catch (Exception e) {</span>
+<span class="fc" id="L77">			e.printStackTrace();</span>
+<span class="fc" id="L78">			throw new Exception(&quot;Desculpe, ocorreu um erro desconhecido ao atualizar a entidade.&quot;);</span>
+<span class="nc" id="L79">		}</span>
+<span class="nc" id="L80">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

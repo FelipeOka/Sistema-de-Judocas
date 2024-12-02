@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CloseTabIcon.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.util</a> &gt; <span class="el_source">CloseTabIcon.java</span></div><h1>CloseTabIcon.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.util;
+
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JTabbedPane;
+ 
+/**
+ * This class encapsulates an icon that can be added to the selector tab of a JTabbedPane to allow 
+ * clicks upon it to close its owning tab.
+ * &lt;p&gt;
+ * Created on 19/06/2006 by Tim Ryan
+ */
+public class CloseTabIcon implements Icon {
+ 
+	private final Icon icon;
+<span class="nc" id="L22">	private JTabbedPane tabbedPane = null;</span>
+<span class="nc" id="L23">	private transient Rectangle position = null;</span>
+ 
+	/**
+	 * Creates a new instance of CloseTabIcon.
+	 */
+<span class="nc" id="L28">	public CloseTabIcon() {</span>
+<span class="nc" id="L29">		this.icon = new ImageIcon(CloseTabIcon.class.getResource(&quot;/close.gif&quot;));</span>
+<span class="nc" id="L30">	}</span>
+ 
+	/**
+	 * when painting, remember last position painted so we can see if the user clicked on the icon.
+	 */
+	public void paintIcon(Component component, Graphics g, int x, int y) {
+ 
+		// Lazily create a link to the owning JTabbedPane and attach a listener to it, so clicks on the
+		// selector tab can be intercepted by this code.
+<span class="nc bnc" id="L39" title="All 2 branches missed.">		if (tabbedPane == null) {</span>
+<span class="nc" id="L40">			tabbedPane = (JTabbedPane) component;</span>
+ 
+<span class="nc" id="L42">			tabbedPane.addMouseListener(new MouseAdapter() {</span>
+ 
+				@Override
+				public void mouseReleased(MouseEvent e) {
+					// asking for isConsumed is *very* important, otherwise more than one tab might get closed!
+<span class="nc bnc" id="L47" title="All 4 branches missed.">					if (! e.isConsumed() &amp;&amp; position.contains(e.getX(), e.getY())) {</span>
+<span class="nc" id="L48">						Component c = tabbedPane.getSelectedComponent();</span>
+<span class="nc" id="L49">						tabbedPane.remove(c);</span>
+<span class="nc" id="L50">						e.consume();</span>
+					}
+<span class="nc" id="L52">				}</span>
+			});
+		}
+ 
+<span class="nc" id="L56">		position = new Rectangle(x, y, getIconWidth(), getIconHeight());</span>
+<span class="nc" id="L57">		icon.paintIcon(component, g, x, y);</span>
+<span class="nc" id="L58">	}</span>
+ 
+	/**
+	 * just delegate
+	 */
+	public int getIconWidth() {
+<span class="nc" id="L64">		return icon.getIconWidth();</span>
+	}
+ 
+	/**
+	 * just delegate
+	 */
+	public int getIconHeight() {
+<span class="nc" id="L71">		return icon.getIconHeight();</span>
+	}
+ 
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

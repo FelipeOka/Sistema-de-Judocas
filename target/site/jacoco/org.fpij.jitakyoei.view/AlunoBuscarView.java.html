@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AlunoBuscarView.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view</a> &gt; <span class="el_source">AlunoBuscarView.java</span></div><h1>AlunoBuscarView.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
+import org.fpij.jitakyoei.facade.AppFacade;
+import org.fpij.jitakyoei.model.beans.Aluno;
+import org.fpij.jitakyoei.model.beans.Filiado;
+import org.fpij.jitakyoei.view.forms.CamposBuscaForm;
+import org.fpij.jitakyoei.view.gui.AlunoBuscarPanel;
+
+public class AlunoBuscarView implements ViewComponent {
+
+	private AlunoBuscarPanel gui;
+	private AppFacade facade;
+	private CamposBuscaForm campoBusca;
+	private DefaultTableModel alunoTableModel;
+	private List&lt;Aluno&gt; alunoList;
+	private Aluno aluno;
+	private Aluno selectedAluno;
+	public int MODO;
+	
+<span class="nc" id="L28">	public static int ALTERACAO = 1;</span>
+<span class="nc" id="L29">	public static int BUSCA = 2;</span>
+	
+	public AlunoBuscarView(int MODO) {
+<span class="nc" id="L32">		this();</span>
+<span class="nc" id="L33">		this.MODO = MODO;</span>
+<span class="nc" id="L34">	}</span>
+	
+<span class="nc" id="L36">	public AlunoBuscarView() {</span>
+<span class="nc" id="L37">		gui = new AlunoBuscarPanel();</span>
+<span class="nc" id="L38">		gui.registerView(this);</span>
+<span class="nc" id="L39">		gui.getBuscar().addActionListener(new BuscarActionHandler());</span>
+<span class="nc" id="L40">		campoBusca = new CamposBuscaForm(gui.getBuscaCamposPanel());</span>
+<span class="nc" id="L41">		alunoTableModel = (DefaultTableModel) gui.getAlunoTable().getModel();</span>
+<span class="nc" id="L42">	}</span>
+	
+	@Override
+	public JPanel getGui() {
+<span class="nc" id="L46">		return gui;</span>
+	}
+	
+	@Override
+	public void registerFacade(AppFacade fac) {
+<span class="nc" id="L51">		this.facade = fac;</span>
+<span class="nc" id="L52">		buscar();</span>
+<span class="nc" id="L53">	}</span>
+
+	public void buscar() {
+<span class="nc" id="L56">		Filiado filiado = new Filiado();</span>
+		
+<span class="nc bnc" id="L58" title="All 4 branches missed.">		if(campoBusca.getNome()!=null &amp;&amp; !campoBusca.getNome().trim().equals(&quot;&quot;)){</span>
+<span class="nc" id="L59">			filiado.setNome(campoBusca.getNome());</span>
+		}
+		
+<span class="nc bnc" id="L62" title="All 4 branches missed.">		if((campoBusca.getRegistroFpij()!=null &amp;&amp; !campoBusca.getRegistroFpij().trim().equals(&quot;&quot;))){</span>
+			try{
+<span class="nc" id="L64">				filiado.setId(Long.parseLong(campoBusca.getRegistroFpij()));</span>
+<span class="nc" id="L65">			}catch (Exception e) {</span>
+<span class="nc" id="L66">				JOptionPane.showMessageDialog(gui,&quot;Nº de Registro inválido! No resgistro só pode haver números.&quot;);</span>
+<span class="nc" id="L67">				return;</span>
+<span class="nc" id="L68">			}</span>
+		}
+<span class="nc" id="L70">		Aluno aluno = new Aluno();</span>
+<span class="nc" id="L71">		aluno.setFiliado(filiado);</span>
+<span class="nc" id="L72">		alunoList = facade.searchAluno(aluno);</span>
+<span class="nc" id="L73">		setAlunoList(alunoList);</span>
+<span class="nc" id="L74">	}</span>
+	
+	private void setAlunoList(List&lt;Aluno&gt; alunoList) {
+<span class="nc" id="L77">		Object[][] data = new Object[alunoList.size()][4];</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">		for (int i = 0; i &lt; alunoList.size(); i++) {</span>
+			try{
+<span class="nc" id="L80">				data[i][0] = alunoList.get(i).getFiliado().getId();</span>
+<span class="nc" id="L81">				data[i][1] = alunoList.get(i).getFiliado().getNome();</span>
+<span class="nc" id="L82">				data[i][2] = alunoList.get(i).getProfessor().getFiliado().getNome();</span>
+<span class="nc" id="L83">				data[i][3] = alunoList.get(i).getEntidade().getNome();</span>
+<span class="nc" id="L84">			}catch (Exception e) {</span>
+<span class="nc" id="L85">				e.printStackTrace();</span>
+<span class="nc" id="L86">			}</span>
+		}
+<span class="nc" id="L88">		alunoTableModel.setDataVector(data, new String[] { </span>
+				&quot;Resistro&quot;, &quot;Nome&quot;, &quot;Professor&quot;, &quot;Entidade&quot; });
+<span class="nc" id="L90">	}</span>
+
+<span class="nc" id="L92">	public class BuscarActionHandler implements ActionListener {</span>
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L95">			buscar();</span>
+<span class="nc" id="L96">		}</span>
+	}
+
+	public List&lt;Aluno&gt; getAlunoList() {
+<span class="nc" id="L100">		return alunoList;</span>
+	}
+
+
+	public Aluno getAluno() {
+<span class="nc" id="L105">		return aluno;</span>
+	}
+
+	public void setAluno(Aluno aluno) {
+<span class="nc" id="L109">		this.aluno = aluno;</span>
+<span class="nc" id="L110">	}</span>
+
+	public Aluno getSelectedAluno() {
+<span class="nc" id="L113">		return selectedAluno;</span>
+	}
+
+	public void setSelectedAluno(Aluno selectedAluno) {
+<span class="nc" id="L117">		this.selectedAluno = selectedAluno;</span>
+<span class="nc" id="L118">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

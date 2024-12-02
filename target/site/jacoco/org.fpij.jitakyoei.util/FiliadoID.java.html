@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FiliadoID.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.util</a> &gt; <span class="el_source">FiliadoID.java</span></div><h1>FiliadoID.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.util;
+
+import java.util.List;
+
+import org.fpij.jitakyoei.model.dao.DAO;
+import org.fpij.jitakyoei.model.dao.DAOImpl;
+
+public class FiliadoID {
+	private long qtd;
+	
+	private static DAO&lt;FiliadoID&gt; dao;
+	private static FiliadoID ref;
+	
+	static{
+<span class="fc" id="L15">		dao = new DAOImpl&lt;FiliadoID&gt;(FiliadoID.class);</span>
+<span class="nc" id="L16">		ref = getInstance();</span>
+<span class="nc" id="L17">	}</span>
+
+<span class="nc" id="L19">	private FiliadoID() {</span>
+<span class="nc" id="L20">		this.qtd = 0;</span>
+<span class="nc" id="L21">	}</span>
+
+	public synchronized static long getNextID() {
+<span class="nc" id="L24">		ref.qtd++;</span>
+<span class="nc" id="L25">		dao.save(ref);</span>
+<span class="nc" id="L26">		return ref.qtd;</span>
+	}
+
+	private static FiliadoID getInstance() {
+<span class="nc" id="L30">		List&lt;FiliadoID&gt; list = dao.list();</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">		if (list.size() &gt; 0) {</span>
+<span class="nc" id="L32">			return list.get(0);</span>
+		} else {
+<span class="nc" id="L34">			FiliadoID fid = new FiliadoID();</span>
+<span class="nc" id="L35">			dao.save(fid);</span>
+<span class="nc" id="L36">			return fid;</span>
+		}
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

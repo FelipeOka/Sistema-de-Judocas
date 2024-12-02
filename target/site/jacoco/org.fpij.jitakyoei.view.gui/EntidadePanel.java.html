@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EntidadePanel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view.gui</a> &gt; <span class="el_source">EntidadePanel.java</span></div><h1>EntidadePanel.java</h1><pre class="source lang-java linenums">/*
+ * Created by JFormDesigner on Wed Dec 09 14:41:56 GMT-03:00 2009
+ */
+
+package org.fpij.jitakyoei.view.gui;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import com.jgoodies.forms.layout.CellConstraints;
+import com.jgoodies.forms.layout.FormLayout;
+
+/**
+ * @author wansoul
+ */
+public class EntidadePanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+<span class="nc" id="L20">	public EntidadePanel() {</span>
+<span class="nc" id="L21">		initComponents();</span>
+<span class="nc" id="L22">	}</span>
+
+	public EnderecoPanel getEnderecoPanel() {
+<span class="nc" id="L25">		return enderecoPanel;</span>
+	}
+
+	public JTextField getNome() {
+<span class="nc" id="L29">		return nome;</span>
+	}
+
+	public JTextField getCnpj() {
+<span class="nc" id="L33">		return cnpj;</span>
+	}
+
+	public JTextField getTelefone1() {
+<span class="nc" id="L37">		return telefone1;</span>
+	}
+
+	public JTextField getTelefone2() {
+<span class="nc" id="L41">		return telefone2;</span>
+	}
+
+	private void initComponents() {
+		// JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+<span class="nc" id="L46">		label1 = new JLabel();</span>
+<span class="nc" id="L47">		nome = new JTextField();</span>
+<span class="nc" id="L48">		label2 = new JLabel();</span>
+<span class="nc" id="L49">		cnpj = new JTextField();</span>
+<span class="nc" id="L50">		label3 = new JLabel();</span>
+<span class="nc" id="L51">		telefone1 = new JTextField();</span>
+<span class="nc" id="L52">		label4 = new JLabel();</span>
+<span class="nc" id="L53">		telefone2 = new JTextField();</span>
+<span class="nc" id="L54">		enderecoPanel = new EnderecoPanel();</span>
+<span class="nc" id="L55">		CellConstraints cc = new CellConstraints();</span>
+
+		//======== this ========
+<span class="nc" id="L58">		setName(&quot;this&quot;);</span>
+<span class="nc" id="L59">		setLayout(new FormLayout(</span>
+			&quot;41dlu, $rgap, 116dlu:grow, $rgap, 44dlu, $lcgap, 129dlu:grow&quot;,
+			&quot;fill:default, 3*($lgap, default)&quot;));
+
+		//---- label1 ----
+<span class="nc" id="L64">		label1.setText(&quot;Entidade:&quot;);</span>
+<span class="nc" id="L65">		label1.setName(&quot;label1&quot;);</span>
+<span class="nc" id="L66">		add(label1, cc.xy(1, 1));</span>
+
+		//---- nome ----
+<span class="nc" id="L69">		nome.setName(&quot;nome&quot;);</span>
+<span class="nc" id="L70">		add(nome, cc.xywh(3, 1, 5, 1));</span>
+
+		//---- label2 ----
+<span class="nc" id="L73">		label2.setText(&quot;CNPJ:&quot;);</span>
+<span class="nc" id="L74">		label2.setName(&quot;label2&quot;);</span>
+<span class="nc" id="L75">		add(label2, cc.xy(1, 3));</span>
+
+		//---- cnpj ----
+<span class="nc" id="L78">		cnpj.setName(&quot;cnpj&quot;);</span>
+<span class="nc" id="L79">		add(cnpj, cc.xywh(3, 3, 5, 1));</span>
+
+		//---- label3 ----
+<span class="nc" id="L82">		label3.setText(&quot;Telefone 1:&quot;);</span>
+<span class="nc" id="L83">		label3.setName(&quot;label3&quot;);</span>
+<span class="nc" id="L84">		add(label3, cc.xy(1, 5));</span>
+
+		//---- telefone1 ----
+<span class="nc" id="L87">		telefone1.setName(&quot;telefone1&quot;);</span>
+<span class="nc" id="L88">		add(telefone1, cc.xy(3, 5));</span>
+
+		//---- label4 ----
+<span class="nc" id="L91">		label4.setText(&quot;Telefone 2:&quot;);</span>
+<span class="nc" id="L92">		label4.setName(&quot;label4&quot;);</span>
+<span class="nc" id="L93">		add(label4, cc.xy(5, 5));</span>
+
+		//---- telefone2 ----
+<span class="nc" id="L96">		telefone2.setName(&quot;telefone2&quot;);</span>
+<span class="nc" id="L97">		add(telefone2, cc.xy(7, 5));</span>
+
+		//---- enderecoPanel ----
+<span class="nc" id="L100">		enderecoPanel.setName(&quot;enderecoPanel&quot;);</span>
+<span class="nc" id="L101">		add(enderecoPanel, cc.xywh(1, 7, 7, 1));</span>
+		// JFormDesigner - End of component initialization  //GEN-END:initComponents
+<span class="nc" id="L103">	}</span>
+
+	// JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+	private JLabel label1;
+	private JTextField nome;
+	private JLabel label2;
+	private JTextField cnpj;
+	private JLabel label3;
+	private JTextField telefone1;
+	private JLabel label4;
+	private JTextField telefone2;
+	private EnderecoPanel enderecoPanel;
+	// JFormDesigner - End of variables declaration  //GEN-END:variables
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

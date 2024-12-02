@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CorFaixa.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.util</a> &gt; <span class="el_source">CorFaixa.java</span></div><h1>CorFaixa.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.util;
+
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="nc" id="L6">public enum CorFaixa {</span>
+<span class="nc" id="L7">	BRANCA(&quot;Branca&quot;),</span>
+<span class="nc" id="L8">	CINZA(&quot;Cinza&quot;),</span>
+<span class="nc" id="L9">	AZUL(&quot;Azul&quot;),</span>
+<span class="nc" id="L10">	AMARELA(&quot;Amarela&quot;),</span>
+<span class="nc" id="L11">	LARANJA(&quot;Laranja&quot;),</span>
+<span class="nc" id="L12">	VERDE(&quot;Verde&quot;),</span>
+<span class="nc" id="L13">	ROXA(&quot;Roxa&quot;),</span>
+<span class="nc" id="L14">	MARROM(&quot;Marrom&quot;),</span>
+<span class="nc" id="L15">	PRETA1DAN(&quot;Preta 1º Dan&quot;),</span>
+<span class="nc" id="L16">	PRETA2DAN(&quot;Preta 2º Dan&quot;),</span>
+<span class="nc" id="L17">	PRETA3DAN(&quot;Preta 3º Dan&quot;),</span>
+<span class="nc" id="L18">	PRETA4DAN(&quot;Preta 4º Dan&quot;),</span>
+<span class="nc" id="L19">	PRETA5DAN(&quot;Preta 5º Dan&quot;),</span>
+<span class="nc" id="L20">	CORAL6DAN(&quot;Coral 6º Dan&quot;),</span>
+<span class="nc" id="L21">	CORAL7DAN(&quot;Coral 7º Dan&quot;),</span>
+<span class="nc" id="L22">	VERMELHA8DAN(&quot;Vermelha 8º Dan&quot;),</span>
+<span class="nc" id="L23">	VERMELHA9DAN(&quot;Vermelha 9º Dan&quot;),</span>
+<span class="nc" id="L24">	VERMELHA10DAN(&quot;Vermelha 10º Dan&quot;);</span>
+	
+	public final String descricao;
+	
+<span class="nc" id="L28">	CorFaixa(String descricao){</span>
+<span class="nc" id="L29">		this.descricao = descricao;</span>
+<span class="nc" id="L30">	}</span>
+	
+	public String getDescricao(){
+<span class="nc" id="L33">		return descricao;</span>
+	}
+	
+	public String toString(){
+<span class="nc" id="L37">		return descricao;</span>
+	}
+	
+	public static List&lt;CorFaixa&gt; getCoresFaixa(){
+<span class="nc" id="L41">		List&lt;CorFaixa&gt; cores = new ArrayList&lt;CorFaixa&gt;();</span>
+<span class="nc" id="L42">		cores.add(BRANCA);</span>
+<span class="nc" id="L43">		cores.add(CINZA);</span>
+<span class="nc" id="L44">		cores.add(AZUL);</span>
+<span class="nc" id="L45">		cores.add(AMARELA);</span>
+<span class="nc" id="L46">		cores.add(LARANJA);</span>
+<span class="nc" id="L47">		cores.add(VERDE);</span>
+<span class="nc" id="L48">		cores.add(ROXA);</span>
+<span class="nc" id="L49">		cores.add(MARROM);</span>
+<span class="nc" id="L50">		cores.add(PRETA1DAN);</span>
+<span class="nc" id="L51">		cores.add(PRETA2DAN);</span>
+<span class="nc" id="L52">		cores.add(PRETA3DAN);</span>
+<span class="nc" id="L53">		cores.add(PRETA4DAN);</span>
+<span class="nc" id="L54">		cores.add(PRETA5DAN);</span>
+<span class="nc" id="L55">		cores.add(CORAL6DAN);</span>
+<span class="nc" id="L56">		cores.add(CORAL7DAN);</span>
+<span class="nc" id="L57">		cores.add(VERMELHA8DAN);</span>
+<span class="nc" id="L58">		cores.add(VERMELHA9DAN);</span>
+<span class="nc" id="L59">		cores.add(VERMELHA10DAN);</span>
+		
+<span class="nc" id="L61">		return cores;</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

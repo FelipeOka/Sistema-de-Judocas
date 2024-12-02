@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AlunoForm.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view.forms</a> &gt; <span class="el_source">AlunoForm.java</span></div><h1>AlunoForm.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.view.forms;
+
+import java.util.List;
+
+import javax.swing.JComboBox;
+
+import org.fpij.jitakyoei.model.beans.Aluno;
+import org.fpij.jitakyoei.model.beans.Entidade;
+import org.fpij.jitakyoei.model.beans.Professor;
+import org.fpij.jitakyoei.model.dao.DAOImpl;
+import org.fpij.jitakyoei.view.gui.AlunoPanel;
+
+public class AlunoForm {
+	private Aluno aluno;
+	private AlunoPanel alunoPanel;
+	private FiliadoForm filiadoForm;
+	
+<span class="nc" id="L18">	public AlunoForm(AlunoPanel alunoPanel) {</span>
+<span class="nc" id="L19">		init(alunoPanel, new Aluno());</span>
+<span class="nc" id="L20">	}</span>
+	
+<span class="nc" id="L22">	public AlunoForm(AlunoPanel alunoPanel, Aluno aluno){</span>
+<span class="nc" id="L23">		init(alunoPanel, aluno);</span>
+<span class="nc" id="L24">		setAluno(aluno);</span>
+<span class="nc" id="L25">	}</span>
+	
+	private void init(AlunoPanel alunoPanel, Aluno aluno){
+<span class="nc" id="L28">		this.aluno = aluno;</span>
+<span class="nc" id="L29">		this.alunoPanel = alunoPanel;</span>
+<span class="nc" id="L30">		this.filiadoForm = new FiliadoForm(alunoPanel.getFiliadoPanel());</span>
+<span class="nc" id="L31">		populaProfessorCombo();</span>
+<span class="nc" id="L32">		populaEntidadeCombo();</span>
+<span class="nc" id="L33">	}</span>
+	
+	public void setAluno(Aluno aluno) {
+<span class="nc" id="L36">		this.aluno = aluno; </span>
+<span class="nc" id="L37">		filiadoForm.setFiliado(aluno.getFiliado());</span>
+<span class="nc" id="L38">		setProfessor(aluno.getProfessor());</span>
+<span class="nc" id="L39">		setEntidade(aluno.getEntidade());</span>
+<span class="nc" id="L40">	}</span>
+	
+	public Aluno getAluno() {
+<span class="nc" id="L43">		aluno.setFiliado(filiadoForm.getFiliado());</span>
+<span class="nc" id="L44">		aluno.setProfessor(getProfessor());</span>
+<span class="nc" id="L45">		aluno.setEntidade(getEntidade());</span>
+<span class="nc" id="L46">		return aluno;</span>
+	}
+
+	public void populaProfessorCombo(){
+<span class="nc" id="L50">		JComboBox professorCombo = alunoPanel.getProfessor();</span>
+<span class="nc" id="L51">		List&lt;Professor&gt; resultProfessores = null;</span>
+		try{
+<span class="nc" id="L53">			resultProfessores  = new DAOImpl&lt;Professor&gt;(Professor.class).list();</span>
+<span class="nc" id="L54">		}catch (Exception e) {</span>
+<span class="nc" id="L55">			e.printStackTrace();</span>
+<span class="nc" id="L56">		}</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">		for (Professor p : resultProfessores) {</span>
+<span class="nc" id="L58">			professorCombo.addItem(p);</span>
+<span class="nc" id="L59">		}</span>
+<span class="nc" id="L60">		professorCombo.setSelectedItem(null);</span>
+<span class="nc" id="L61">	}</span>
+	
+	public void populaEntidadeCombo(){
+<span class="nc" id="L64">		JComboBox entidadeCombo = alunoPanel.getEntidade();</span>
+<span class="nc" id="L65">		List&lt;Entidade&gt; resultEntidades = null;	</span>
+		try{
+<span class="nc" id="L67">			resultEntidades = new DAOImpl&lt;Entidade&gt;(Entidade.class).list();</span>
+<span class="nc" id="L68">		}catch (Exception e) {</span>
+<span class="nc" id="L69">			e.printStackTrace();</span>
+<span class="nc" id="L70">		}</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">		for (Entidade e : resultEntidades) {</span>
+<span class="nc" id="L72">			entidadeCombo.addItem(e);</span>
+<span class="nc" id="L73">		}</span>
+<span class="nc" id="L74">		entidadeCombo.setSelectedItem(null);</span>
+<span class="nc" id="L75">	}</span>
+	
+	/* Métodos de acesso ao dados da GUI */
+	public Entidade getEntidade() {
+<span class="nc" id="L79">		return (Entidade) alunoPanel.getEntidade().getSelectedItem();</span>
+	}
+	public Professor getProfessor() {
+<span class="nc" id="L82">		return (Professor) alunoPanel.getProfessor().getSelectedItem();</span>
+	}
+	
+	/* Métodos modificadores dos dados dad GUI */
+	public void setEntidade(Entidade entidade) {
+<span class="nc" id="L87">		alunoPanel.getEntidade().setSelectedItem(entidade);</span>
+<span class="nc" id="L88">	}</span>
+	public void setProfessor(Professor professor) {
+<span class="nc" id="L90">		alunoPanel.getProfessor().setSelectedItem(professor);</span>
+<span class="nc" id="L91">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

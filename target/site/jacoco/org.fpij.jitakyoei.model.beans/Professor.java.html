@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Professor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.model.beans</a> &gt; <span class="el_source">Professor.java</span></div><h1>Professor.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.model.beans;
+
+import java.util.ArrayList;
+import java.util.List;
+
+<span class="fc" id="L6">public class Professor {</span>
+<span class="fc" id="L7">	Filiado filiado = new Filiado();</span>
+<span class="fc" id="L8">	List&lt;Entidade&gt; entidades = new ArrayList&lt;Entidade&gt;();</span>
+	
+
+	@Override
+	public boolean equals(Object obj) {
+<span class="nc bnc" id="L13" title="All 2 branches missed.">		if(obj instanceof Professor){</span>
+<span class="nc" id="L14">			Professor other = (Professor) obj;</span>
+<span class="nc bnc" id="L15" title="All 2 branches missed.">			return 	filiado.id == other.filiado.id;</span>
+		}
+<span class="nc" id="L17">		return false;</span>
+	}
+	
+	@Override
+	public int hashCode() {
+<span class="nc" id="L22">		int hash = 7;</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">		return 29 * hash +(this.filiado.getId() != null ? (int)(long)this.filiado.getId() : 0);</span>
+	}
+
+	public Filiado getFiliado() {
+<span class="fc" id="L27">		return filiado;</span>
+	}
+
+	public void setFiliado(Filiado filiado) {
+<span class="fc" id="L31">		this.filiado = filiado;</span>
+<span class="fc" id="L32">	}</span>
+	
+	public List&lt;Entidade&gt; getEntidades() {
+<span class="nc" id="L35">		return entidades;</span>
+	}
+	
+	public void setEntidades(List&lt;Entidade&gt; entidades) {
+<span class="nc" id="L39">		this.entidades = entidades;</span>
+<span class="nc" id="L40">	}</span>
+	
+	public String toString(){
+<span class="fc" id="L43">		return this.filiado.getNome();</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

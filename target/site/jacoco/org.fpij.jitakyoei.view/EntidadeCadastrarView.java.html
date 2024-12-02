@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EntidadeCadastrarView.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view</a> &gt; <span class="el_source">EntidadeCadastrarView.java</span></div><h1>EntidadeCadastrarView.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import org.fpij.jitakyoei.facade.AppFacade;
+import org.fpij.jitakyoei.view.forms.EntidadeForm;
+import org.fpij.jitakyoei.view.gui.EntidadeCadastrarPanel;
+
+public class EntidadeCadastrarView implements ViewComponent {
+
+	private EntidadeCadastrarPanel gui;
+	private AppFacade facade;
+	private EntidadeForm entidadeForm;
+	private MainAppView parent;
+	
+	
+<span class="nc" id="L21">	public EntidadeCadastrarView(MainAppView parent) {</span>
+<span class="nc" id="L22">		this.parent = parent;</span>
+<span class="nc" id="L23">		gui = new EntidadeCadastrarPanel();</span>
+<span class="nc" id="L24">		gui.getCancelar().addActionListener(new CancelarActionHandler());</span>
+<span class="nc" id="L25">		gui.getCadastrarEntidade().addActionListener(new CadastrarActionHandler());</span>
+<span class="nc" id="L26">		entidadeForm = new EntidadeForm(gui.getEntidadePanel());</span>
+<span class="nc" id="L27">		gui.setVisible(true);</span>
+<span class="nc" id="L28">	}</span>
+
+	@Override
+	public JPanel getGui() {
+<span class="nc" id="L32">		return gui;</span>
+	}
+
+	@Override
+	public void registerFacade(AppFacade fac) {
+<span class="nc" id="L37">		this.facade = fac;</span>
+<span class="nc" id="L38">	}</span>
+	
+	/**
+	 * Classe interna responsável por responder aos cliques no botão &quot;Cadastrar&quot;.
+	 * 
+	 * @author Aécio
+	 */
+<span class="nc" id="L45">	public class CadastrarActionHandler implements ActionListener {</span>
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			try {
+<span class="nc" id="L49">				facade.createEntidade(entidadeForm.getEntidade());</span>
+<span class="nc" id="L50">				JOptionPane.showMessageDialog(gui, &quot;Entidade cadastrada com sucesso!&quot;);</span>
+<span class="nc" id="L51">				parent.removeTabPanel(gui);</span>
+<span class="nc" id="L52">			} catch (Exception e) {</span>
+<span class="nc" id="L53">				e.printStackTrace();</span>
+<span class="nc" id="L54">			}		</span>
+<span class="nc" id="L55">		}</span>
+	}
+	
+	/**
+	 * Classe interna responsável por responder aos cliques no botão &quot;Cancelar&quot;.
+	 * 
+	 * @author Aécio
+	 */
+<span class="nc" id="L63">	public class CancelarActionHandler implements ActionListener {</span>
+		@Override
+		public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L66">			parent.removeTabPanel(gui);</span>
+<span class="nc" id="L67">		}</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

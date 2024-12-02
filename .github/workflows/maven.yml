@@ -68,12 +68,19 @@ jobs:
           fail_ci_if_error: true
 
   update-readme:
-    name: Update README with Test Results
+    name: Update README with Test Results and Coverage
     runs-on: ubuntu-latest
-    needs: surefire-report  
+    needs: jacoco-coverage  
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Extract Coverage from JaCoCo Report
+        id: get_coverage
+        run: |
+          # Extrair a porcentagem de cobertura do arquivo HTML do JaCoCo
+          COVERAGE=$(grep -oP '(?<=<div class="percentage">)[0-9]+(?=%</div>)' target/site/jacoco/index.html)
+          echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
 
       - name: Get Test Results
         id: get_test_results
@@ -85,19 +92,23 @@ jobs:
           echo "FAILURE_COUNT=$FAILURE_COUNT" >> $GITHUB_ENV
           echo "ERROR_COUNT=$ERROR_COUNT" >> $GITHUB_ENV
           echo "TOTAL_TESTS=$TOTAL_TESTS" >> $GITHUB_ENV
-      
-      - name: Update README.md
+
+      - name: Update README.md with Test and Coverage Results
         run: |
           echo "## Test Results" > README.md
           echo "Total Tests Run: $TOTAL_TESTS" >> README.md
           echo "Failures: $FAILURE_COUNT" >> README.md
           echo "Errors: $ERROR_COUNT" >> README.md
           echo "See the full test reports in target/surefire-reports/" >> README.md
+          
+          echo "## JaCoCo Coverage" >> README.md
+          echo "Code coverage: $COVERAGE%" >> README.md
+          echo "See the full JaCoCo report in target/site/jacoco/index.html" >> README.md
 
       - name: Commit and push README update
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Update README with test results"
+          git commit -m "Update README with test and coverage results"
           git push

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AlunoAtualizarView.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sistema-de-judocas</a> &gt; <a href="index.source.html" class="el_package">org.fpij.jitakyoei.view</a> &gt; <span class="el_source">AlunoAtualizarView.java</span></div><h1>AlunoAtualizarView.java</h1><pre class="source lang-java linenums">package org.fpij.jitakyoei.view;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import org.fpij.jitakyoei.facade.AppFacade;
+import org.fpij.jitakyoei.model.beans.Aluno;
+import org.fpij.jitakyoei.view.forms.AlunoForm;
+import org.fpij.jitakyoei.view.gui.AlunoAtualizarPanel;
+
+public class AlunoAtualizarView implements ViewComponent{
+	private AlunoAtualizarPanel gui;
+	private AlunoForm alunoForm;
+	private AppFacade facade;
+	private MainAppView parent;
+	
+<span class="nc" id="L20">	public AlunoAtualizarView(MainAppView parent, Aluno aluno){</span>
+<span class="nc" id="L21">		this.parent = parent;</span>
+<span class="nc" id="L22">		gui = new AlunoAtualizarPanel();</span>
+<span class="nc" id="L23">		alunoForm = new AlunoForm(gui.getAlunoPanel());</span>
+<span class="nc" id="L24">		alunoForm.setAluno(aluno);</span>
+<span class="nc" id="L25">		gui.getAtualizar().addActionListener(new AtualizarActionHandler());</span>
+<span class="nc" id="L26">		gui.getCancelar().addActionListener(new CancelarActionHandler());</span>
+<span class="nc" id="L27">	}</span>
+	
+	@Override
+	public JPanel getGui(){
+<span class="nc" id="L31">		return gui;</span>
+	}
+	
+	@Override
+	public void registerFacade(AppFacade fac) {
+<span class="nc" id="L36">		this.facade = fac;		</span>
+<span class="nc" id="L37">	}	</span>
+	
+	/**
+	 * Classe interna responsável por responder aos cliques no botão &quot;Atualizar&quot;.
+	 * 
+	 * @author Aécio
+	 */
+<span class="nc" id="L44">	public class AtualizarActionHandler implements ActionListener {</span>
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+<span class="nc" id="L47">			Aluno aluno = alunoForm.getAluno();</span>
+			try {
+<span class="nc" id="L49">				facade.updateAluno(aluno);</span>
+<span class="nc" id="L50">				JOptionPane.showMessageDialog(gui, &quot;Aluno atualizado com sucesso!&quot;);</span>
+<span class="nc" id="L51">				parent.removeTabPanel(gui);</span>
+<span class="nc" id="L52">			} catch (Exception e) {</span>
+<span class="nc" id="L53">				e.printStackTrace();</span>
+<span class="nc" id="L54">			}</span>
+<span class="nc" id="L55">		}</span>
+	}
+	
+	/**
+	 * Classe interna responsável por responder aos cliques no botão &quot;Cancelar&quot;.
+	 * 
+	 * @author Aécio
+	 */
+<span class="nc" id="L63">	public class CancelarActionHandler implements ActionListener {</span>
+		@Override
+		public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L66">			parent.removeTabPanel(gui);</span>
+<span class="nc" id="L67">		}</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
