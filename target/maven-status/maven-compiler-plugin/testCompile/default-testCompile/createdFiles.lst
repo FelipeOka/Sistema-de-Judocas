@@ -1,0 +1,8 @@
+org\fpij\jitakyoei\model\unit\ProfessorBOImplUnitTest.class
+org\fpij\jitakyoei\model\unit\ProfessorEntidadeBOImplUnitTest.class
+org\fpij\jitakyoei\model\ModelIntegrationTests.class
+org\fpij\jitakyoei\model\unit\EntidadeBOImplUnitTest.class
+org\fpij\jitakyoei\model\dao\AlunoTest.class
+org\fpij\jitakyoei\model\unit\AlunoBOImplUnitTest.class
+org\fpij\jitakyoei\model\dao\ProfessorTest.class
+org\fpij\jitakyoei\model\dao\EntidadeTest.class
