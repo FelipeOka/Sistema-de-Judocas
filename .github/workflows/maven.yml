@@ -95,7 +95,7 @@ jobs:
           echo "Total Tests Run: $TOTAL_TESTS" >> README.md
           echo "Falhas: $FAILURE_COUNT" >> README.md
           echo "Erros: $ERROR_COUNT" >> README.md
-          echo "Veja o reporte completo em [target/surefire-reports/](https://github.com/FelipeOka/Sistema-de-Judocas/tree/master/target/surefire-reports)" >> README.md
+          echo "Veja o reporte completo em [target/surefire-reports/](https://github.com/FelipeOka/Sistema-de-Judocas/tree/master/target/surefire-reports) ou baixe e veja o [html](https://github.com/FelipeOka/Sistema-de-Judocas/blob/master/target/reports/surefire.html)" >> README.md
           
           echo "## JaCoCo Cobertura" >> README.md
           echo "[Veja reporte de cobertura de codigo completo aqui](https://github.com/FelipeOka/Sistema-de-Judocas/blob/master/target/site/jacoco/index.html)" >> README.md
