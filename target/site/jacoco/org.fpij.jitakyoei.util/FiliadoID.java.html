@@ -13,23 +13,23 @@ public class FiliadoID {
 	
 	static{
 <span class="fc" id="L15">		dao = new DAOImpl&lt;FiliadoID&gt;(FiliadoID.class);</span>
-<span class="nc" id="L16">		ref = getInstance();</span>
-<span class="nc" id="L17">	}</span>
+<span class="fc" id="L16">		ref = getInstance();</span>
+<span class="fc" id="L17">	}</span>
 
 <span class="nc" id="L19">	private FiliadoID() {</span>
 <span class="nc" id="L20">		this.qtd = 0;</span>
 <span class="nc" id="L21">	}</span>
 
 	public synchronized static long getNextID() {
-<span class="nc" id="L24">		ref.qtd++;</span>
-<span class="nc" id="L25">		dao.save(ref);</span>
-<span class="nc" id="L26">		return ref.qtd;</span>
+<span class="fc" id="L24">		ref.qtd++;</span>
+<span class="fc" id="L25">		dao.save(ref);</span>
+<span class="fc" id="L26">		return ref.qtd;</span>
 	}
 
 	private static FiliadoID getInstance() {
-<span class="nc" id="L30">		List&lt;FiliadoID&gt; list = dao.list();</span>
-<span class="nc bnc" id="L31" title="All 2 branches missed.">		if (list.size() &gt; 0) {</span>
-<span class="nc" id="L32">			return list.get(0);</span>
+<span class="fc" id="L30">		List&lt;FiliadoID&gt; list = dao.list();</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">		if (list.size() &gt; 0) {</span>
+<span class="fc" id="L32">			return list.get(0);</span>
 		} else {
 <span class="nc" id="L34">			FiliadoID fid = new FiliadoID();</span>
 <span class="nc" id="L35">			dao.save(fid);</span>
